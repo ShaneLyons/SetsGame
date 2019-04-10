@@ -5,14 +5,17 @@ using UnityEngine;
 // ripped from https://unity3d.com/learn/tutorials/topics/2d-game-creation/scripting-gravity
 public class PlayerController : PhysicsObject
 {
-    public float maxSpeed = 7;
-    public float jumpTakeOffSpeed = 7;
+    public float maxSpeed = 3;
+    public float jumpTakeOffSpeed = 4;
+
+    private int doubleJumps;
 
     private SpriteRenderer spriteRenderer;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
+        doubleJumps = 0;
     }
 
     protected override void ComputeVelocity()
@@ -24,12 +27,20 @@ public class PlayerController : PhysicsObject
         if (Input.GetKeyDown(KeyCode.UpArrow) && grounded)
         {
             velocity.y = jumpTakeOffSpeed;
+            doubleJumps = 0;
         }
 
-        else if (Input.GetKeyDown(KeyCode.UpArrow) && !grounded && doubleJump)
+        else if (Input.GetKeyDown(KeyCode.UpArrow) && wallJump && doubleJumps < 2)
+        {
+            velocity.y = jumpTakeOffSpeed;
+            doubleJumps++;
+        }
+
+        else if (Input.GetKeyDown(KeyCode.UpArrow) && doubleJump && doubleJumps < 2)
         {
             doubleJump = false;
             velocity.y = jumpTakeOffSpeed;
+            doubleJumps++;
         }
 
         else if (Input.GetKeyUp(KeyCode.UpArrow))

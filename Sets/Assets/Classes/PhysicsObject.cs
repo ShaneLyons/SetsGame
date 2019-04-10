@@ -7,11 +7,13 @@ using UnityEngine;
 public class PhysicsObject : MonoBehaviour
 {
     public float minGroundNormalY = .65f;
+    public float minWallJumpNormalX = .8f;
     public float gravityModifier = 1f;
 
     protected Vector2 targetVelocity;
     protected bool grounded;
     protected bool doubleJump;
+    protected bool wallJump;
     protected Vector2 groundNormal;
     protected Rigidbody2D rb2d;
     protected Vector2 velocity;
@@ -52,6 +54,7 @@ public class PhysicsObject : MonoBehaviour
         velocity.x = targetVelocity.x;
 
         grounded = false;
+        wallJump = false;
 
         Vector2 deltaPosition = velocity * Time.deltaTime;
 
@@ -79,7 +82,7 @@ public class PhysicsObject : MonoBehaviour
                 hitBufferList.Add(hitBuffer[i]);
             }
 
-            for (int i=-0; i<hitBufferList.Count; i++)
+            for (int i=0; i<hitBufferList.Count; i++)
             {
                 Vector2 currentNormal = hitBufferList[i].normal;
                 // this could matter for slopes
@@ -92,6 +95,11 @@ public class PhysicsObject : MonoBehaviour
                         groundNormal = currentNormal;
                         currentNormal.x = 0;
                     }
+                }
+
+                if (Mathf.Abs(currentNormal.x) > minWallJumpNormalX)
+                {
+                    wallJump = true;
                 }
 
                 float projection = Vector2.Dot(velocity, currentNormal);
