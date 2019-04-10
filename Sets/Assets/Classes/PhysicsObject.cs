@@ -11,6 +11,7 @@ public class PhysicsObject : MonoBehaviour
 
     protected Vector2 targetVelocity;
     protected bool grounded;
+    protected bool doubleJump;
     protected Vector2 groundNormal;
     protected Rigidbody2D rb2d;
     protected Vector2 velocity;
@@ -31,6 +32,7 @@ public class PhysicsObject : MonoBehaviour
         contactFilter.useTriggers = false;
         contactFilter.SetLayerMask(Physics2D.GetLayerCollisionMask(gameObject.layer));
         contactFilter.useLayerMask = true;
+        doubleJump = true;
     }
 
     void Update()
@@ -84,6 +86,7 @@ public class PhysicsObject : MonoBehaviour
                 if (currentNormal.y > minGroundNormalY)
                 {
                     grounded = true;
+                    doubleJump = true;
                     if (yMovement)
                     {
                         groundNormal = currentNormal;

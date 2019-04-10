@@ -26,6 +26,12 @@ public class PlayerController : PhysicsObject
             velocity.y = jumpTakeOffSpeed;
         }
 
+        else if (Input.GetKeyDown(KeyCode.UpArrow) && !grounded && doubleJump)
+        {
+            doubleJump = false;
+            velocity.y = jumpTakeOffSpeed;
+        }
+
         else if (Input.GetKeyUp(KeyCode.UpArrow))
         {
             if (velocity.y > 0)
