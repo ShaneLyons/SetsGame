@@ -6,23 +6,29 @@ using UnityEngine;
 // ripped from https://unity3d.com/learn/tutorials/topics/2d-game-creation/scripting-gravity
 public class PhysicsObject : MonoBehaviour
 {
-    public float minGroundNormalY = .65f;
-    public float minWallJumpNormalX = .8f;
-    public float gravityModifier = 1f;
+    // used to tweak what's registered as ground vs wall
+    public const float minGroundNormalY = .65f;
 
+    public const float gravityModifier = 1f;
+
+    // api for subclasses
     protected Vector2 targetVelocity;
+
+    // logic for jumping
     protected bool grounded;
     protected bool doubleJump;
     protected bool wallJump;
     protected Vector2 groundNormal;
+
+    // logic for collision
     protected Rigidbody2D rb2d;
-    protected Vector2 velocity;
     protected ContactFilter2D contactFilter;
     protected RaycastHit2D[] hitBuffer = new RaycastHit2D[16];
     protected List<RaycastHit2D> hitBufferList = new List<RaycastHit2D>(16);
-
     protected const float minMoveDistance = 0.001f;
     protected const float shellRadius = 0.01f;
+
+    protected Vector2 velocity;
 
     void OnEnable()
     {
@@ -31,9 +37,11 @@ public class PhysicsObject : MonoBehaviour
 
     void Start()
     {
+        // pass in game object layer for collisions
         contactFilter.useTriggers = false;
         contactFilter.SetLayerMask(Physics2D.GetLayerCollisionMask(gameObject.layer));
         contactFilter.useLayerMask = true;
+
         doubleJump = true;
     }
 
@@ -45,27 +53,27 @@ public class PhysicsObject : MonoBehaviour
 
     protected virtual void ComputeVelocity()
     {
-
+        // this will have to be implemented by any subclasses that want to define movement
     }
 
     void FixedUpdate()
     {
         velocity += gravityModifier * Physics2D.gravity * Time.deltaTime;
+
         velocity.x = targetVelocity.x;
 
         grounded = false;
         wallJump = false;
 
         Vector2 deltaPosition = velocity * Time.deltaTime;
-
         Vector2 moveAlongGround = new Vector2(groundNormal.y, -groundNormal.x);
 
+        // horizontal movement
         Vector2 move = moveAlongGround * deltaPosition.x;
-
         Movement(move, false);
 
+        // vertical movement
         move = Vector2.up * deltaPosition.y;
-
         Movement(move, true);
     }
 
@@ -77,6 +85,7 @@ public class PhysicsObject : MonoBehaviour
         {
             int count = rb2d.Cast(move, contactFilter, hitBuffer, distance + shellRadius);
             hitBufferList.Clear();
+
             for (int i=0; i<count; i++)
             {
                 hitBufferList.Add(hitBuffer[i]);
@@ -85,7 +94,8 @@ public class PhysicsObject : MonoBehaviour
             for (int i=0; i<hitBufferList.Count; i++)
             {
                 Vector2 currentNormal = hitBufferList[i].normal;
-                // this could matter for slopes
+
+                // matters for slopes
                 if (currentNormal.y > minGroundNormalY)
                 {
                     grounded = true;
@@ -95,9 +105,7 @@ public class PhysicsObject : MonoBehaviour
                         groundNormal = currentNormal;
                         currentNormal.x = 0;
                     }
-                }
-
-                if (Mathf.Abs(currentNormal.x) > minWallJumpNormalX)
+                } else
                 {
                     wallJump = true;
                 }

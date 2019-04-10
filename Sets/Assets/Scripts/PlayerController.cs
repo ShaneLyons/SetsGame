@@ -5,17 +5,21 @@ using UnityEngine;
 // ripped from https://unity3d.com/learn/tutorials/topics/2d-game-creation/scripting-gravity
 public class PlayerController : PhysicsObject
 {
-    public float maxSpeed = 3;
-    public float jumpTakeOffSpeed = 4;
+    [SerializeField]
+    public const float maxSpeed = 3;
+    [SerializeField]
+    public const float jumpTakeOffSpeed = 4;
 
-    private int doubleJumps;
+    // used to cap how many total jumps we can do
+    private int extraJumps;
+    public const int maxExtraJumps = 2;
 
     private SpriteRenderer spriteRenderer;
 
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
-        doubleJumps = 0;
+        extraJumps = 0;
     }
 
     protected override void ComputeVelocity()
@@ -24,25 +28,29 @@ public class PlayerController : PhysicsObject
 
         move.x = Input.GetAxis("Horizontal");
 
+        // regular jump
         if (Input.GetKeyDown(KeyCode.UpArrow) && grounded)
         {
             velocity.y = jumpTakeOffSpeed;
-            doubleJumps = 0;
+            extraJumps = 0;
         }
 
-        else if (Input.GetKeyDown(KeyCode.UpArrow) && wallJump && doubleJumps < 2)
+        // wall jump
+        else if (Input.GetKeyDown(KeyCode.UpArrow) && wallJump && extraJumps < 2)
         {
             velocity.y = jumpTakeOffSpeed;
-            doubleJumps++;
+            extraJumps++;
         }
 
-        else if (Input.GetKeyDown(KeyCode.UpArrow) && doubleJump && doubleJumps < 2)
+        // double jump
+        else if (Input.GetKeyDown(KeyCode.UpArrow) && doubleJump && extraJumps < 2)
         {
             doubleJump = false;
             velocity.y = jumpTakeOffSpeed;
-            doubleJumps++;
+            extraJumps++;
         }
 
+        // how long velocity lasts
         else if (Input.GetKeyUp(KeyCode.UpArrow))
         {
             if (velocity.y > 0)
