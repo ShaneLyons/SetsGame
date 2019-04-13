@@ -3,7 +3,7 @@ guid: 6c4413fea3b0a3a4bb7793a7defbec72
 TextureImporter:
   fileIDToRecycleName:
     21300000: soft shapes bright
-    21300002: soft shapes dim
+    21300002: soft shapes
     21300004: soft shapes medium
   externalObjects: {}
   serializedVersion: 9
@@ -43,7 +43,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -109,61 +109,21 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: soft shapes bright
+      name: soft shapes
       rect:
         serializedVersion: 2
-        x: 314
-        y: 70
-        width: 492
-        height: 434
+        x: 0
+        y: 0
+        width: 1024
+        height: 1024
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f21187b84093b3e40bb1ebe9f4818c16
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: soft shapes dim
-      rect:
-        serializedVersion: 2
-        x: 79
-        y: 517
-        width: 430
-        height: 430
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 30bfb38a51ce01444a39b5f15235bc57
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: soft shapes medium
-      rect:
-        serializedVersion: 2
-        x: 555
-        y: 524
-        width: 433
-        height: 443
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f80730e3ffc89c640bc1a99fd57409b7
       vertices: []
       indices: 
       edges: []
