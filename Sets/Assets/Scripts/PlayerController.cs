@@ -18,7 +18,7 @@ public class PlayerController : PhysicsObject
 
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
         extraJumps = 0;
     }
 
