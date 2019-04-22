@@ -751,8 +751,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -0.14, y: -1.87}
-      - {x: -1.17, y: 1.6}
-      - {x: 1.08, y: 1.6}
+      - {x: -1.1700001, y: 1.7037468}
+      - {x: 1.2469325, y: 1.6711695}
 --- !u!50 &247806901
 Rigidbody2D:
   serializedVersion: 4
@@ -810,7 +810,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 17f607513be6bd54db02391243adc6b3, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 1
@@ -1192,8 +1192,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -0.14, y: -1.87}
-      - {x: -1.17, y: 1.6}
-      - {x: 1.08, y: 1.6}
+      - {x: -1.2591612, y: 1.6711313}
+      - {x: 1.104306, y: 1.6138074}
 --- !u!50 &585744156
 Rigidbody2D:
   serializedVersion: 4
@@ -1251,7 +1251,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 17f607513be6bd54db02391243adc6b3, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -1525,12 +1525,6 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9654b660951f74140815ecf5e254357e, type: 3}
---- !u!95 &830052089 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 4969145180593969668, guid: a1ff044a479434f4c95a30a1e5e1b51b,
-    type: 3}
-  m_PrefabInstance: {fileID: 4969145181419621629}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &835022866
 GameObject:
   m_ObjectHideFlags: 0
@@ -1655,8 +1649,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -0.14, y: -1.87}
-      - {x: -1.17, y: 1.6}
-      - {x: 1.08, y: 1.6}
+      - {x: -1.1436497, y: 1.6471127}
+      - {x: 1.2379916, y: 1.6327555}
 --- !u!50 &846097373
 Rigidbody2D:
   serializedVersion: 4
@@ -1714,7 +1708,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 17f607513be6bd54db02391243adc6b3, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 1
@@ -2646,8 +2640,8 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: -0.14, y: -1.87}
-      - {x: -1.17, y: 1.6}
-      - {x: 1.08, y: 1.6}
+      - {x: -1.180109, y: 1.6710182}
+      - {x: 1.1063509, y: 1.6421036}
 --- !u!50 &1434948700
 Rigidbody2D:
   serializedVersion: 4
@@ -2705,7 +2699,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 17f607513be6bd54db02391243adc6b3, type: 3}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
@@ -8992,61 +8986,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4969145179442405092, guid: a1ff044a479434f4c95a30a1e5e1b51b,
-        type: 3}
-      propertyPath: anim
-      value: 
-      objectReference: {fileID: 830052089}
-    - target: {fileID: 4969145180373427047, guid: a1ff044a479434f4c95a30a1e5e1b51b,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4969145180373427047, guid: a1ff044a479434f4c95a30a1e5e1b51b,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4969145180373427047, guid: a1ff044a479434f4c95a30a1e5e1b51b,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4969145180373427047, guid: a1ff044a479434f4c95a30a1e5e1b51b,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4969145180373427047, guid: a1ff044a479434f4c95a30a1e5e1b51b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4969145179510862972, guid: a1ff044a479434f4c95a30a1e5e1b51b,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4969145179510862972, guid: a1ff044a479434f4c95a30a1e5e1b51b,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4969145179510862972, guid: a1ff044a479434f4c95a30a1e5e1b51b,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4969145179510862972, guid: a1ff044a479434f4c95a30a1e5e1b51b,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4969145179510862972, guid: a1ff044a479434f4c95a30a1e5e1b51b,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1ff044a479434f4c95a30a1e5e1b51b, type: 3}

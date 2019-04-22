@@ -18,6 +18,8 @@ public class PlayerController : PhysicsObject
     public Animator anim;
 
     public const string RUNNING = "Running";
+    public const string JUMP = "Jump";
+    public const string FALLING = "Falling";
 
     private bool facingRight = true;
 
@@ -35,6 +37,7 @@ public class PlayerController : PhysicsObject
         // regular jump
         if (Input.GetKeyDown(KeyCode.UpArrow) && grounded)
         {
+            anim.SetTrigger(JUMP);
             velocity.y = jumpTakeOffSpeed;
             extraJumps = 0;
         }
@@ -42,6 +45,7 @@ public class PlayerController : PhysicsObject
         // wall jump
         else if (Input.GetKeyDown(KeyCode.UpArrow) && wallJump && extraJumps < 2)
         {
+            anim.SetTrigger(JUMP);
             velocity.y = jumpTakeOffSpeed;
             extraJumps++;
         }
@@ -49,6 +53,7 @@ public class PlayerController : PhysicsObject
         // double jump
         else if (Input.GetKeyDown(KeyCode.UpArrow) && doubleJump && extraJumps < 2)
         {
+            anim.SetTrigger(JUMP);
             doubleJump = false;
             velocity.y = jumpTakeOffSpeed;
             extraJumps++;
@@ -73,8 +78,6 @@ public class PlayerController : PhysicsObject
             graphics.localScale = new Vector3(-1*graphics.localScale.x, graphics.localScale.y, graphics.localScale.z);
         }
 
-        Debug.Log(move);
-
         //change to running animation
         if (Mathf.Abs(move.x) > 0.1f)
         {
@@ -82,6 +85,18 @@ public class PlayerController : PhysicsObject
         } else
         {
             anim.SetBool(RUNNING, false);
+        }
+
+        // set falling to false on land
+        if (grounded && anim.GetBool(FALLING))
+        {
+            anim.SetBool(FALLING, false);
+        }
+
+        // set falling to true on fall
+        if (!grounded && !anim.GetBool(FALLING))
+        {
+            anim.SetBool(FALLING, true);
         }
 
         targetVelocity = move * maxSpeed;
