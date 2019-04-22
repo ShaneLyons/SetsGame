@@ -14,11 +14,11 @@ public class PlayerController : PhysicsObject
     private int extraJumps;
     public const int maxExtraJumps = 2;
 
-    private SpriteRenderer spriteRenderer;
+    public Transform graphics;
+    private bool facingRight = true;
 
     void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
         extraJumps = 0;
     }
 
@@ -59,10 +59,11 @@ public class PlayerController : PhysicsObject
             }
         }
 
-        bool flipSprite = (spriteRenderer.flipX ? (move.x > 0.01f) : (move.x < 0.01f));
+        bool flipSprite = facingRight ? (move.x < -0.01f):(move.x > 0.01f);
         if (flipSprite)
         {
-            spriteRenderer.flipX = !spriteRenderer.flipX;
+            facingRight = !facingRight;
+            graphics.localScale = new Vector3(-1*graphics.localScale.x, graphics.localScale.y, graphics.localScale.z);
         }
 
         targetVelocity = move * maxSpeed;
