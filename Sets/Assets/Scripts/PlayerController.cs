@@ -15,6 +15,10 @@ public class PlayerController : PhysicsObject
     public const int maxExtraJumps = 2;
 
     public Transform graphics;
+    public Animator anim;
+
+    public const string RUNNING = "Running";
+
     private bool facingRight = true;
 
     void Start()
@@ -59,11 +63,25 @@ public class PlayerController : PhysicsObject
             }
         }
 
+        // graphics
+
+        // flip sprite
         bool flipSprite = facingRight ? (move.x < -0.01f):(move.x > 0.01f);
         if (flipSprite)
         {
             facingRight = !facingRight;
             graphics.localScale = new Vector3(-1*graphics.localScale.x, graphics.localScale.y, graphics.localScale.z);
+        }
+
+        Debug.Log(move);
+
+        //change to running animation
+        if (Mathf.Abs(move.x) > 0.1f)
+        {
+            anim.SetBool(RUNNING, true);
+        } else
+        {
+            anim.SetBool(RUNNING, false);
         }
 
         targetVelocity = move * maxSpeed;
