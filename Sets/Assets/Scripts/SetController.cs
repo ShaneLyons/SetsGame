@@ -5,27 +5,23 @@ using UnityEngine;
 
 public class SetController : MonoBehaviour
 {
-	public Jewel j1, j2, j3, j4, j5, j6;
-	private HashSet<Jewel> jewels;
+		private HashSet<GameObject> jewels;
 
-    // Start is called before the first frame update
     void Start()
     {
-    	jewels = new HashSet<Jewel>();
-        jewels.Add(j1);
-        jewels.Add(j2);
-        jewels.Add(j3);
-        jewels.Add(j4);
-        jewels.Add(j5);
-        jewels.Add(j6);
-
-        SpriteRenderer[] sprites = GetComponentsInChildren<SpriteRenderer>();
-        Debug.Log(sprites);
+			jewels = new HashSet<GameObject>();
+    	foreach (Transform child in transform) {
+				if (child.tag == "Jewel") {
+					jewels.Add(child.gameObject);
+				}
+			}
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public HashSet<Jewel> getJewels() {
+			HashSet<Jewel> returnJewels = new HashSet<Jewel>();
+			foreach (GameObject jewel in jewels) {
+				returnJewels.Add(jewel.GetComponent<JewelController>().getType());
+			}
+			return returnJewels;
+		}
 }
