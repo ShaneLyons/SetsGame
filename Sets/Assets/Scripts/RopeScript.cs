@@ -66,19 +66,8 @@ public class RopeScript : MonoBehaviour {
  
 	void Update()
 	{
-		// Put rope control here!
- 
- 
-		//Destroy Rope Test	(Example of how you can use the rope dynamically)
-		if(rope && Input.GetKeyDown("d"))
-		{
-			DestroyRope();	
-		}	
-		if(!rope && Input.GetKeyDown("r"))
-		{
-			BuildRope();
-		}
 	}
+
 	void LateUpdate()
 	{
 		// Does rope exist? If so, update its position

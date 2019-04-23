@@ -6,9 +6,9 @@ using UnityEngine;
 public class PlayerController : PhysicsObject
 {
     [SerializeField]
-    public const float maxSpeed = 3;
+    public const float maxSpeed = 2;
     [SerializeField]
-    public const float jumpTakeOffSpeed = 4;
+    public const float jumpTakeOffSpeed = 3;
 
     // used to cap how many total jumps we can do
     private int extraJumps;
