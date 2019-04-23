@@ -16,7 +16,7 @@ public class FixedInput : MonoBehaviour, InputBlock {
 
     void Start() {
         set = new HashSet<Jewel>();
-        Jewel[] jewels = {jewel1, jewel2, jewel3};
+        Jewel[] jewels = {jewel1, jewel2, jewel3, jewel4, jewel5, jewel6};
         foreach(Jewel jewel in jewels){
             //if(jewel != Jewel.White){
             set.Add(jewel);

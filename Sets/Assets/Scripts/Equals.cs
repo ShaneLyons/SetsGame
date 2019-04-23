@@ -22,8 +22,7 @@ public class Equals : MonoBehaviour, Operator {
         else {
             rightSet = set;
         }
-        foreach (Jewel jewel in leftSet) Debug.Log(jewel);
-        foreach (Jewel jewel in rightSet) Debug.Log(jewel);
+        //Debug.Log(leftSet.Count);
         bool outputValue = leftSet.SetEquals(rightSet);
         output.InputResult(outputValue);
     }

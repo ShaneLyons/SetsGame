@@ -42,12 +42,12 @@ public class UnionIntersectDifference : MonoBehaviour, Operator {
                 output.InputSet(outputSet);
                 break;
             case Operators.Difference:
-                outputSet.UnionWith(leftSet);
-                foreach (Jewel jewel in rightSet) {
-                    if (rightSet.Contains(jewel)) {
-                        rightSet.Remove(jewel);
+                foreach (Jewel jewel in leftSet) {
+                    if (!rightSet.Contains(jewel)) {
+                        outputSet.Add(jewel);
                     }
                 }
+                output.InputSet(outputSet);
                 break;
         }
     }
