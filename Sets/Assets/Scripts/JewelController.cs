@@ -29,4 +29,9 @@ public class JewelController : MonoBehaviour
     public Jewel getType() {
       return type;
     }
+
+    public void hideJewel()
+    {
+        sprite.enabled = false;
+    }
 }
