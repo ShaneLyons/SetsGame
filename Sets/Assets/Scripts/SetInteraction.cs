@@ -9,20 +9,48 @@ public class SetInteraction : MonoBehaviour
     private bool holdingSet;
     private SetController heldSet;
 
+    // needed to make sure we don't pick up an object again too fast
+    [SerializeField]
+    private float pickupTimeout = .2f;
+    private float cooldown;
+
     void Start()
     {
         hitbox = GetComponent<BoxCollider2D>();
         holdingSet = false;
+        cooldown = 0;
     }
 
-    private void OnTriggerStay2D(Collider2D collision)
+    void Update()
     {
-        if (collision.tag == "Set") {
-            if (Input.GetKey(KeyCode.Space) && !holdingSet) {
-                holdingSet = true;
-                heldSet = collision.GetComponent<SetController>();
-                heldSet.hideSet();
+        if (holdingSet) {
+            heldSet.transform.position = ((Vector2) gameObject.transform.position + new Vector2(0, 1));
+
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                heldSet.transform.position = newSetPosition();
+                holdingSet = false;
+                cooldown = 0;
+            }
+        } else {
+            if (cooldown < pickupTimeout) {
+                cooldown += Time.deltaTime;
             }
         }
+    }
+
+    void OnTriggerStay2D(Collider2D collision)
+    {
+        if (collision.tag == "Set") {
+            if (Input.GetKeyUp(KeyCode.Space) && !holdingSet) {
+                if (cooldown >= pickupTimeout) {
+                    holdingSet = true;
+                    heldSet = collision.GetComponent<SetController>();
+                }
+            }
+        }
+    }
+
+    private Vector2 newSetPosition() {
+        return gameObject.transform.position;
     }
 }

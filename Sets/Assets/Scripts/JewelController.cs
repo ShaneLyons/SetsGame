@@ -34,4 +34,9 @@ public class JewelController : MonoBehaviour
     {
         sprite.enabled = false;
     }
+
+    public void showJewel()
+    {
+        sprite.enabled = true;
+    }
 }

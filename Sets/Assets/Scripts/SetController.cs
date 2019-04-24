@@ -37,4 +37,13 @@ public class SetController : MonoBehaviour
             jewel.GetComponent<JewelController>().hideJewel();
         }
     }
+
+    public void showSet()
+    {
+        sprite.enabled = true;
+        foreach (GameObject jewel in jewels)
+        {
+            jewel.GetComponent<JewelController>().showJewel();
+        }
+    }
 }

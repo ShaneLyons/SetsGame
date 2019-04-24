@@ -496,24 +496,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!1 &576221649 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4969145179442405093, guid: a1ff044a479434f4c95a30a1e5e1b51b,
-    type: 3}
-  m_PrefabInstance: {fileID: 1311213573}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &576221650
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 576221649}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f393e0f09642e21db1072054fa6ed05, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &661975802
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,6 +818,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3468414350306122443, guid: a1ff044a479434f4c95a30a1e5e1b51b,
+        type: 3}
+      propertyPath: pickupTimeout
+      value: 0.2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1ff044a479434f4c95a30a1e5e1b51b, type: 3}
