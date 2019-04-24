@@ -11,7 +11,6 @@ public class FixedInput : MonoBehaviour, InputBlock {
     public Jewel jewel5;
     public Jewel jewel6;
     private HashSet<Jewel> set;
-    public GameObject operatorOutput;
     private Operator operatorComponent;
 
     void Start() {
@@ -27,6 +26,6 @@ public class FixedInput : MonoBehaviour, InputBlock {
     }
 
     public void InputSet(HashSet<Jewel> inputSet) {
-        operatorOutput.GetComponent<Operator>().InputSet(set, isLeftInput);
+        GetComponentInParent<Operator>().InputSet(set, isLeftInput);
     }
 }
