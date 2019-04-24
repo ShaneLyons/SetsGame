@@ -14,22 +14,29 @@ public class SetInteraction : MonoBehaviour
     private float pickupTimeout = .2f;
     private float cooldown;
 
+    Collider2D collider;
+    bool collided;
+
     void Start()
     {
         hitbox = GetComponent<BoxCollider2D>();
         holdingSet = false;
         cooldown = 0;
+        collided = false;
     }
 
     void Update()
     {
-        if (holdingSet) {
+        if (collided) {
+            collideRoutine(collider);
+        }
+        // little jank check if cooldown is zero which means we just dropped something into input
+        if (holdingSet && cooldown != 0) {
             heldSet.transform.position = ((Vector2) gameObject.transform.position + new Vector2(0, 1));
-
             if (Input.GetKeyDown(KeyCode.Space)) {
-                heldSet.transform.position = newSetPosition();
                 holdingSet = false;
                 cooldown = 0;
+                heldSet.transform.position = newSetPosition();
             }
         } else {
             if (cooldown < pickupTimeout) {
@@ -38,9 +45,46 @@ public class SetInteraction : MonoBehaviour
         }
     }
 
-    void OnTriggerStay2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Set") {
+        collider = collision;
+        collided = true;
+    }
+
+    void OnTriggerExit2D(Collider2D collision)
+    {
+        collided = false;    
+    }
+
+    void collideRoutine(Collider2D collision)
+    {
+        if (collision.tag == "Input")
+        {
+            ActiveInput input = collision.GetComponent<ActiveInput>();
+            // placing a set
+            if (Input.GetKeyDown(KeyCode.Space) && holdingSet)
+            {
+                holdingSet = false;
+                heldSet.hideSet();
+                SetController currentSet = heldSet;
+                // in case there's an old set
+                if (input.holdsSet())
+                {
+                    pickupSet(input);
+                }
+                input.PlaceSet(currentSet);
+                cooldown = 0;
+
+            // picking up a set
+            }
+            else if (Input.GetKeyUp(KeyCode.Space) && !holdingSet)
+            {
+                if (input.holdsSet() && cooldown >= pickupTimeout)
+                {
+                    pickupSet(input);
+                }
+            }
+        } else if (collision.tag == "Set") {
             if (Input.GetKeyUp(KeyCode.Space) && !holdingSet) {
                 SetController possibleSet = collision.GetComponent<SetController>();
                 // make sure we don't immediately pick up the same set
@@ -53,7 +97,16 @@ public class SetInteraction : MonoBehaviour
         }
     }
 
-    private Vector2 newSetPosition() {
+    private void pickupSet(ActiveInput input)
+    {
+        holdingSet = true;
+        heldSet = input.RemoveSet();
+        heldSet.showSet();
+        heldSet.transform.position = ((Vector2)gameObject.transform.position + new Vector2(0, 1));
+    }
+
+    private Vector2 newSetPosition()
+    {
         return gameObject.transform.position;
     }
 }

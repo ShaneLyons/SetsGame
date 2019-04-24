@@ -9,6 +9,7 @@ public class UnionIntersectDifference : MonoBehaviour, Operator {
         Difference
     }
 
+    [SerializeField]
     public Operators type;
     private HashSet<Jewel> leftSet;
     private HashSet<Jewel> rightSet;
@@ -29,26 +30,32 @@ public class UnionIntersectDifference : MonoBehaviour, Operator {
         else {
             rightSet = set;
         }
-        HashSet<Jewel> outputSet = new HashSet<Jewel>();
-        switch (type) {
-            case Operators.Union:
-                outputSet.UnionWith(leftSet);
-                outputSet.UnionWith(rightSet);
-                output.InputSet(outputSet);
-                break;
-            case Operators.Intersect:
-                outputSet.UnionWith(leftSet);
-                outputSet.IntersectWith(rightSet);
-                output.InputSet(outputSet);
-                break;
-            case Operators.Difference:
-                foreach (Jewel jewel in leftSet) {
-                    if (!rightSet.Contains(jewel)) {
-                        outputSet.Add(jewel);
+        
+        if (leftSet != null && rightSet != null) {
+            HashSet<Jewel> outputSet = new HashSet<Jewel>();
+            switch (type)
+            {
+                case Operators.Union:
+                    outputSet.UnionWith(leftSet);
+                    outputSet.UnionWith(rightSet);
+                    output.InputSet(outputSet);
+                    break;
+                case Operators.Intersect:
+                    outputSet.UnionWith(leftSet);
+                    outputSet.IntersectWith(rightSet);
+                    output.InputSet(outputSet);
+                    break;
+                case Operators.Difference:
+                    foreach (Jewel jewel in leftSet)
+                    {
+                        if (!rightSet.Contains(jewel))
+                        {
+                            outputSet.Add(jewel);
+                        }
                     }
-                }
-                output.InputSet(outputSet);
-                break;
+                    output.InputSet(outputSet);
+                    break;
+            }
         }
     }
 }

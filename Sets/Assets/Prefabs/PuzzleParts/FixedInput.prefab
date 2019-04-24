@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 892203727870960461}
   m_Layer: 0
   m_Name: FixedInput
-  m_TagString: Untagged
+  m_TagString: Input
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,4 +108,7 @@ MonoBehaviour:
   jewel1: 0
   jewel2: 0
   jewel3: 0
+  jewel4: 0
+  jewel5: 0
+  jewel6: 0
   operatorOutput: {fileID: 0}

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Jewel
   - Set
+  - Input
   layers:
   - Default
   - TransparentFX
