@@ -42,9 +42,12 @@ public class SetInteraction : MonoBehaviour
     {
         if (collision.tag == "Set") {
             if (Input.GetKeyUp(KeyCode.Space) && !holdingSet) {
-                if (cooldown >= pickupTimeout) {
+                SetController possibleSet = collision.GetComponent<SetController>();
+                // make sure we don't immediately pick up the same set
+                if (heldSet != possibleSet || cooldown >= pickupTimeout) {
                     holdingSet = true;
-                    heldSet = collision.GetComponent<SetController>();
+                    heldSet = possibleSet;
+                    heldSet.transform.position = ((Vector2)gameObject.transform.position + new Vector2(0, 1));
                 }
             }
         }
