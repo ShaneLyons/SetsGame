@@ -21,8 +21,6 @@ public class FixedInput : MonoBehaviour, InputBlock {
             set.Add(jewel);
             //}
         }
-        operatorComponent = operatorOutput.GetComponentInParent<Operator>();
-        operatorComponent.InputSet(set, isLeftInput);
     }
 
     public void InputSet(HashSet<Jewel> inputSet) {
