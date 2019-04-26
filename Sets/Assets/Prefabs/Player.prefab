@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4969145179442405095}
   - component: {fileID: 4969145179442405092}
   - component: {fileID: 3468414350306122443}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -120,7 +120,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4969145179510862972}
   - component: {fileID: 4969145179510862975}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: right arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -200,7 +200,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4969145179649358534}
   - component: {fileID: 4969145179649358529}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -279,7 +279,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4969145179681709831}
   - component: {fileID: 4969145179681709830}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -358,7 +358,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4969145179774540861}
   - component: {fileID: 4969145179774540860}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: left leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -438,7 +438,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4969145179982282339}
   - component: {fileID: 4969145179982282338}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -517,7 +517,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4969145180001281269}
   - component: {fileID: 4969145180001281268}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: hand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -596,7 +596,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4969145180373427047}
   - component: {fileID: 4969145180373427046}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: left arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -676,7 +676,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4969145180593969671}
   - component: {fileID: 4969145180593969668}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PlayerGraphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -729,7 +729,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4969145180647511432}
   - component: {fileID: 4969145180647511435}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: right leg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -809,7 +809,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4969145180813832077}
   - component: {fileID: 4969145180813832076}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -891,7 +891,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4969145181137640806}
   - component: {fileID: 4969145181137640801}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Glow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -970,7 +970,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4969145181346714663}
   - component: {fileID: 4969145181346714662}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Graphics
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1049,7 +1049,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4969145181363941433}
   - component: {fileID: 4969145181363941432}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: foot
   m_TagString: Untagged
   m_Icon: {fileID: 0}

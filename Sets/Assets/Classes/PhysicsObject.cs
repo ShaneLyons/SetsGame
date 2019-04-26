@@ -91,6 +91,10 @@ public class PhysicsObject : MonoBehaviour
 
             for (int i=0; i<hitBufferList.Count; i++)
             {
+                if (hitBufferList[i].collider.tag == "Player" && gameObject.tag == "Set")
+                {
+                    continue;
+                }
                 Vector2 currentNormal = hitBufferList[i].normal;
 
                 // matters for slopes
