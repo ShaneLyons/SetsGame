@@ -17,7 +17,6 @@ public class PhysicsObject : MonoBehaviour
     // logic for jumping
     protected bool grounded;
     protected bool doubleJump;
-    protected bool wallJump;
     protected Vector2 groundNormal;
 
     // logic for collision
@@ -63,7 +62,6 @@ public class PhysicsObject : MonoBehaviour
         velocity.x = targetVelocity.x;
 
         grounded = false;
-        wallJump = false;
 
         Vector2 deltaPosition = velocity * Time.deltaTime;
         Vector2 moveAlongGround = new Vector2(groundNormal.y, -groundNormal.x);
@@ -105,9 +103,6 @@ public class PhysicsObject : MonoBehaviour
                         groundNormal = currentNormal;
                         currentNormal.x = 0;
                     }
-                } else
-                {
-                    wallJump = true;
                 }
 
                 float projection = Vector2.Dot(velocity, currentNormal);

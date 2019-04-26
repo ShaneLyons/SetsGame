@@ -10,10 +10,6 @@ public class PlayerController : PhysicsObject
     [SerializeField]
     public const float jumpTakeOffSpeed = 3;
 
-    // used to cap how many total jumps we can do
-    private int extraJumps;
-    public const int maxExtraJumps = 2;
-
     public Transform graphics;
     public Animator anim;
 
@@ -22,11 +18,6 @@ public class PlayerController : PhysicsObject
     public const string FALLING = "Falling";
 
     private bool facingRight = true;
-
-    void Start()
-    {
-        extraJumps = 0;
-    }
 
     protected override void ComputeVelocity()
     {
@@ -39,24 +30,14 @@ public class PlayerController : PhysicsObject
         {
             anim.SetTrigger(JUMP);
             velocity.y = jumpTakeOffSpeed;
-            extraJumps = 0;
-        }
-
-        // wall jump
-        else if (Input.GetKeyDown(KeyCode.UpArrow) && wallJump && extraJumps < 2)
-        {
-            anim.SetTrigger(JUMP);
-            velocity.y = jumpTakeOffSpeed;
-            extraJumps++;
         }
 
         // double jump
-        else if (Input.GetKeyDown(KeyCode.UpArrow) && doubleJump && extraJumps < 2)
+        else if (Input.GetKeyDown(KeyCode.UpArrow) && doubleJump)
         {
             anim.SetTrigger(JUMP);
             doubleJump = false;
             velocity.y = jumpTakeOffSpeed;
-            extraJumps++;
         }
 
         // how long velocity lasts
