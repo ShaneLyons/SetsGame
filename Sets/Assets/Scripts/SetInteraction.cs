@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class SetInteraction : MonoBehaviour
@@ -9,100 +8,113 @@ public class SetInteraction : MonoBehaviour
     private bool holdingSet;
     private SetController heldSet;
 
-    // needed to make sure we don't pick up an object again too fast
-    [SerializeField]
-    private float pickupTimeout = .2f;
-    private float cooldown;
+    // more efficient to only check when we enter and exit objects
+    List<Collider2D> colliders = new List<Collider2D>();
 
-    Collider2D collider;
-    bool collided;
+    // make sure we don't immediately pick up what we drop
+    bool pickedUp;
 
     void Start()
     {
         hitbox = GetComponent<BoxCollider2D>();
         holdingSet = false;
-        cooldown = 0;
-        collided = false;
+        pickedUp = false;
     }
 
     void Update()
     {
-        if (collided) {
-            collideRoutine(collider);
+        if (colliders.Count > 0)
+        {
+            collideRoutine(colliders);
         }
-        // little jank check if cooldown is zero which means we just dropped something into input
-        if (holdingSet && cooldown != 0) {
+
+        if (holdingSet)
+        {
             heldSet.transform.position = ((Vector2) gameObject.transform.position + new Vector2(0, 1));
-            if (Input.GetKeyDown(KeyCode.Space)) {
+            // dropping a set
+            if (Input.GetKeyDown(KeyCode.Space) && !pickedUp)
+            {
                 holdingSet = false;
-                cooldown = 0;
                 heldSet.transform.position = newSetPosition();
             }
-        } else {
-            if (cooldown < pickupTimeout) {
-                cooldown += Time.deltaTime;
-            }
         }
+
+        pickedUp = false;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        collider = collision;
-        collided = true;
+        colliders.Add(collision);
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        collided = false;    
+        colliders.Remove(collision);
     }
 
-    void collideRoutine(Collider2D collision)
+    void collideRoutine(List<Collider2D> collisions)
     {
+        Collider2D collision = getCollider(collisions);
         if (collision.tag == "Input")
         {
             ActiveInput input = collision.GetComponent<ActiveInput>();
-            // placing a set
+            // placing a set into an input
             if (Input.GetKeyDown(KeyCode.Space) && holdingSet)
             {
                 holdingSet = false;
                 heldSet.hideSet();
                 SetController currentSet = heldSet;
-                // in case there's an old set
+                // in case there's an old set in the input
                 if (input.holdsSet())
                 {
-                    pickupSet(input);
+                    pickupSetFromInput(input);
                 }
                 input.PlaceSet(currentSet);
-                cooldown = 0;
 
-            // picking up a set
+            // picking up a set from the input
             }
-            else if (Input.GetKeyUp(KeyCode.Space) && !holdingSet)
+            else if (Input.GetKeyDown(KeyCode.Space) && !holdingSet)
             {
-                if (input.holdsSet() && cooldown >= pickupTimeout)
+                if (input.holdsSet())
                 {
-                    pickupSet(input);
+                    pickupSetFromInput(input);
                 }
             }
+        // picking up a set
         } else if (collision.tag == "Set") {
-            if (Input.GetKeyUp(KeyCode.Space) && !holdingSet) {
-                SetController possibleSet = collision.GetComponent<SetController>();
-                // make sure we don't immediately pick up the same set
-                if (heldSet != possibleSet || cooldown >= pickupTimeout) {
-                    holdingSet = true;
-                    heldSet = possibleSet;
-                    heldSet.transform.position = ((Vector2)gameObject.transform.position + new Vector2(0, 1));
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                SetController nextSet = collision.GetComponent<SetController>();
+                if (holdingSet)
+                {
+                    heldSet.transform.position = gameObject.transform.position;
                 }
+                heldSet = nextSet;
+                heldSet.transform.position = (Vector2)gameObject.transform.position + new Vector2(0, 1);
+                holdingSet = true;
+                pickedUp = true;
             }
         }
     }
 
-    private void pickupSet(ActiveInput input)
+    private Collider2D getCollider(List<Collider2D> collisions)
+    {
+        foreach (Collider2D collision in collisions)
+        {
+            if (collision.tag == "Input")
+            {
+                return collision;
+            }
+        }
+        return collisions[0];
+    }
+
+    private void pickupSetFromInput(ActiveInput input)
     {
         holdingSet = true;
         heldSet = input.RemoveSet();
         heldSet.showSet();
         heldSet.transform.position = ((Vector2)gameObject.transform.position + new Vector2(0, 1));
+        pickedUp = true;
     }
 
     private Vector2 newSetPosition()
