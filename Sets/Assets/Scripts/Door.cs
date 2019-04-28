@@ -8,7 +8,8 @@ public class Door : MonoBehaviour, Goal {
     public Material failTexture;
 
     void Start() {
-        GetComponent<Renderer>().material = successTexture; 
+        GetComponent<Renderer>().material = successTexture;
+        InputResult(false);
     }
 
     public void InputResult(bool isCorrect){

@@ -22,7 +22,6 @@ public class Equals : MonoBehaviour, Operator {
         else {
             rightSet = set;
         }
-        //Debug.Log(leftSet.Count);
         bool outputValue = leftSet.SetEquals(rightSet);
         output.InputResult(outputValue);
     }
