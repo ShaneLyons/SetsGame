@@ -7,7 +7,7 @@ public class SetController : MonoBehaviour
 {
 	private HashSet<GameObject> jewels;
     private SpriteRenderer sprite;
-    private BoxCollider2D hitbox;
+    private Collider2D hitbox;
 
     void Start()
     {
@@ -22,7 +22,7 @@ public class SetController : MonoBehaviour
         // we'll need this to hide the set later
         sprite = GetComponent<SpriteRenderer>();
 
-        hitbox = GetComponent<BoxCollider2D>();
+        hitbox = GetComponent<Collider2D>();
     }
 
     public HashSet<Jewel> getJewels() {
@@ -48,5 +48,15 @@ public class SetController : MonoBehaviour
         {
             jewel.GetComponent<JewelController>().showJewel();
         }
+    }
+
+    public void hideCollider()
+    {
+        hitbox.enabled = false;
+    }
+
+    public void showCollider()
+    {
+        hitbox.enabled = true;
     }
 }

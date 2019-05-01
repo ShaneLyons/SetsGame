@@ -17,11 +17,21 @@ public class ActiveInput : MonoBehaviour, InputBlock {
         holdingSet = false;
     }
 
+    void Update()
+    {
+        if (holdingSet)
+        {
+            heldSet.transform.position = (Vector2)transform.position + new Vector2(0, 0.6f);
+        }
+    }
+
     //Player places block
     public void PlaceSet(SetController inputSet) {
         set = inputSet.getJewels();
         heldSet = inputSet;
         holdingSet = true;
+        heldSet.transform.position = (Vector2) transform.position + new Vector2(0, 0.5f);
+        heldSet.hideCollider();
         InputSet(set);
     }
 
@@ -30,6 +40,7 @@ public class ActiveInput : MonoBehaviour, InputBlock {
         // little fix for now, should improve later
         InputSet(null);
         holdingSet = false;
+        heldSet.showCollider();
         return heldSet;
     }
 

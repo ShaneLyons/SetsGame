@@ -62,7 +62,6 @@ public class SetInteraction : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space) && holdingSet)
             {
                 holdingSet = false;
-                heldSet.hideSet();
                 SetController currentSet = heldSet;
                 // in case there's an old set in the input
                 if (input.holdsSet())
@@ -112,7 +111,6 @@ public class SetInteraction : MonoBehaviour
     {
         holdingSet = true;
         heldSet = input.RemoveSet();
-        heldSet.showSet();
         heldSet.transform.position = ((Vector2)gameObject.transform.position + new Vector2(0, 1));
         pickedUp = true;
     }
