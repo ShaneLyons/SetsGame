@@ -101,7 +101,10 @@ public class SetInteraction : MonoBehaviour
         {
             if (collision.tag == "Input")
             {
-                return collision;
+                if (collision.GetComponent<ActiveInput>().holdsSet() || holdingSet)
+                {
+                    return collision;
+                }
             }
         }
         return collisions[0];
