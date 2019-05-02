@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2230902602697679507}
   - component: {fileID: 2230902602697679506}
   - component: {fileID: 2230902602697679517}
+  - component: {fileID: 8933390931577991435}
   m_Layer: 0
   m_Name: Rope
   m_TagString: Untagged
@@ -166,6 +167,20 @@ MonoBehaviour:
   lowTwistLimit: -100
   highTwistLimit: 100
   swing1Limit: 0
+--- !u!114 &8933390931577991435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2230902602697679516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 763414bca1fb2d049b2bea27829f451e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  light: {fileID: 241379470361404847, guid: a685fb1423e30674680763f99f72f8ab, type: 3}
+  test: 0
 --- !u!1 &2230902602738035605
 GameObject:
   m_ObjectHideFlags: 0

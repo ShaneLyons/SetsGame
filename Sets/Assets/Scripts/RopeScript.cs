@@ -62,6 +62,13 @@ public class RopeScript : MonoBehaviour {
 	void Awake()
 	{
 		BuildRope();
+        try
+        {
+            this.GetComponent<LightRope>().Setup();
+        } catch
+        {
+
+        }
 	}
  
 	void Update()
