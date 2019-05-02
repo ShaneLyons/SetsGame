@@ -6,6 +6,7 @@
 
 using UnityEngine;
 using System.Collections;
+using System;
  
 // Require a Rigidbody and LineRenderer object for easier assembly
 [RequireComponent (typeof (Rigidbody))]
@@ -113,11 +114,19 @@ public class RopeScript : MonoBehaviour {
 		// Find the distance between each segment
 		var segs = segments-1;
 		var seperation = ((target.position - transform.position)/segs);
+		var absYSeparation = Math.Abs(target.position.y - transform.position.y);
+		var absXSeparation = Math.Abs(target.position.x - transform.position.x);
  
 		for(int s=1;s < segments;s++)
 		{
 			// Find the each segments position using the slope from above
-			Vector3 vector = (seperation*s) + transform.position;	
+			Vector3 vector = (seperation*s) + transform.position;
+			float t = (float)s / segments;
+
+			// Give the rope a -sin() shape to simulate droop right from the get-go, so it
+			// doesn't start out as a rigid line that has to fall.
+			vector.y -= (float)Math.Sin(t * Math.PI) *
+				(float)Math.Max(absXSeparation * 0.3, absYSeparation * 0.4);
 			segmentPos[s] = vector;
  
 			//Add Physics to the segments
