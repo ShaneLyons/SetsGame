@@ -40,15 +40,6 @@ public class PlayerController : PhysicsObject
             velocity.y = jumpTakeOffSpeed;
         }
 
-        // how long velocity lasts
-        else if (Input.GetKeyUp(KeyCode.UpArrow))
-        {
-            if (velocity.y > 0)
-            {
-                velocity.y = velocity.y * 0.5f;
-            }
-        }
-
         // graphics
 
         // flip sprite
