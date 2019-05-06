@@ -12,9 +12,9 @@ public class MenuButtonController : MonoBehaviour
     void Start()
     {
         Debug.Log("menu controller inited");
-        button1.onClick.AddListener(clicked);
-        button2.onClick.AddListener(clicked);
-        button3.onClick.AddListener(clicked);
+        button1.onClick.AddListener(playGame);
+        button2.onClick.AddListener(credits);
+        //button3.onClick.AddListener(clicked);
     }
 
     // Update is called once per frame
@@ -23,9 +23,15 @@ public class MenuButtonController : MonoBehaviour
         
     }
 
-    void clicked()
+    void playGame()
     {
-        Debug.Log("clicked");
-        SceneManager.LoadScene(0);
+        Debug.Log("playGame");
+        SceneManager.LoadScene("Level 1 Tutorial");
+    }
+
+    void credits()
+    {
+        Debug.Log("credits");
+        SceneManager.LoadScene("Credits");
     }
 }

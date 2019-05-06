@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadSceneOnClick : MonoBehaviour
 {
-    public int sceneIndex;
+    public string sceneName;
     void Start()
     {
     }
@@ -13,6 +13,6 @@ public class LoadSceneOnClick : MonoBehaviour
     // Start is called before the first frame update
     public void loadByIndex()
     {
-        SceneManager.LoadScene(sceneIndex);
+        SceneManager.LoadScene(sceneName);
     }
 }
