@@ -26,7 +26,7 @@ public class MenuButtonController : MonoBehaviour
     void playGame()
     {
         Debug.Log("playGame");
-        SceneManager.LoadScene("Level 1 Tutorial");
+        SceneManager.LoadScene("LevelSelect");
     }
 
     void credits()
