@@ -2,42 +2,30 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour, Goal {
+public class Door : MonoBehaviour {
 
-    public Material successTexture;
-    public Material failTexture;
+    private Vector3 goalPosition;
+    private Vector3 startPosition;
 
-    // remove this after playtest
-    private Vector2 goalPosition;
+    private bool opened;
 
-    void Start() {
-        GetComponent<Renderer>().material = successTexture;
-        InputResult(false);
-        // remove this after playtest
-        goalPosition = transform.position;
-    }
-
-    public void InputResult(bool isCorrect){
-        if (isCorrect) {
-            SuccessState();
-        } else {
-            FailureState();
-        }
-    }
-
-    // remove this after playtest
-    void Update()
+    void Start()
     {
-        transform.position = goalPosition;
+        startPosition = transform.position;
+        goalPosition = startPosition + new Vector3(0, 2, 0);
+        opened = false;
     }
 
-    public void SuccessState() {
-        GetComponent<Renderer>().material = successTexture;
-        // remove this after playtest
-        goalPosition = (Vector2) transform.position + new Vector2(0, 2);
+    public void raiseDoor() {
+        opened = true;
     }
 
-    public void FailureState() {
-        GetComponent<Renderer>().material = failTexture;
+    void FixedUpdate()
+    {
+        float t = .1f;
+        if (opened)
+        {
+            transform.position = Vector3.Lerp(transform.position, goalPosition, t);
+        }
     }
 }
