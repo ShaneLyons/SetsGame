@@ -126,12 +126,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isLeftInput: 0
-  jewel1: 0
-  jewel2: 0
-  jewel3: 0
-  jewel4: 0
-  jewel5: 0
-  jewel6: 0
+  jewels: 0000000002000000
 --- !u!212 &7749685890792807358
 SpriteRenderer:
   m_ObjectHideFlags: 0
