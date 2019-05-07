@@ -7275,6 +7275,12 @@ PrefabInstance:
       propertyPath: isLeftInput
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5950057189324553921, guid: 3ffdd74eee00e4989a28b31e8500a3c0,
+        type: 3}
+      propertyPath: jewelPrefab
+      value: 
+      objectReference: {fileID: 7428664386037767969, guid: 2418764e4eb975c4698be923f21fe7a5,
+        type: 3}
     - target: {fileID: 7255459295159837602, guid: 3ffdd74eee00e4989a28b31e8500a3c0,
         type: 3}
       propertyPath: m_RootOrder
@@ -9215,6 +9221,12 @@ PrefabInstance:
       propertyPath: jewel6
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 892203727870960461, guid: bfeffaeda9eee4786a6871a677ac3ab9,
+        type: 3}
+      propertyPath: jewelPrefab
+      value: 
+      objectReference: {fileID: 7428664386037767969, guid: 2418764e4eb975c4698be923f21fe7a5,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfeffaeda9eee4786a6871a677ac3ab9, type: 3}
 --- !u!1001 &1680661986
