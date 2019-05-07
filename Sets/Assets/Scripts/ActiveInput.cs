@@ -45,6 +45,8 @@ public class ActiveInput : MonoBehaviour, InputBlock {
     }
 
     public void InputSet(HashSet<Jewel> set) {
+        Debug.Log("inputted set");
+        Debug.Log(set);
         GetComponentInParent<Operator>().InputSet(set, isLeftInput);
     }
 

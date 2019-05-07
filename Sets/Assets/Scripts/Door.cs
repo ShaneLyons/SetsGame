@@ -2,42 +2,72 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Door : MonoBehaviour, Goal {
+public class Door : MonoBehaviour, Goal
+{
+    private Vector2 openPosition;
+    private Vector2 startPosition;
+    private bool moving;
+    private bool open;
+    public float openSpeed;
 
-    public Material successTexture;
-    public Material failTexture;
-
-    // remove this after playtest
-    private Vector2 goalPosition;
-
-    void Start() {
-        GetComponent<Renderer>().material = successTexture;
-        InputResult(false);
-        // remove this after playtest
-        goalPosition = transform.position;
+    void Start()
+    {
+        startPosition = (Vector2) transform.localPosition;
+        openPosition = startPosition + new Vector2(0, 2);
+        moving = false;
+        open = false;
     }
 
-    public void InputResult(bool isCorrect){
-        if (isCorrect) {
+    public void InputResult(bool isCorrect)
+    {
+        Debug.Log(isCorrect);
+        if (isCorrect)
+        {
             SuccessState();
-        } else {
+        }
+        else
+        {
             FailureState();
         }
     }
 
-    // remove this after playtest
     void Update()
     {
-        transform.position = goalPosition;
+        if (moving)
+        {
+            float distanceToOpening;
+            float yMovement;
+            int direction;
+            if (open)
+            {
+                distanceToOpening = openPosition.y - transform.localPosition.y;
+                direction = 1;
+            }
+            else
+            {
+                distanceToOpening = transform.localPosition.y - startPosition.y;
+                direction = -1;
+            }
+            yMovement = openSpeed * Time.deltaTime;
+            if (distanceToOpening < yMovement)
+            {
+                yMovement = distanceToOpening;
+                moving = false;
+            }
+            transform.position = transform.position + new Vector3(0, yMovement * direction, 0);
+
+        }
     }
 
-    public void SuccessState() {
-        GetComponent<Renderer>().material = successTexture;
-        // remove this after playtest
-        goalPosition = (Vector2) transform.position + new Vector2(0, 2);
+    public void SuccessState()
+    {
+        open = true;
+        moving = true;
     }
 
-    public void FailureState() {
-        GetComponent<Renderer>().material = failTexture;
+    public void FailureState()
+    {
+        open = false;
+        moving = true;
     }
 }

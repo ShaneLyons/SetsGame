@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnionIntersectDifference : MonoBehaviour, Operator {
-    public enum Operators {
+public class UnionIntersectDifference : MonoBehaviour, Operator
+{
+    public enum Operators
+    {
         Union,
         Intersect,
         Difference
@@ -16,42 +18,61 @@ public class UnionIntersectDifference : MonoBehaviour, Operator {
     public GameObject outputObject;
     private InputBlock output;
 
-    // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
         output = outputObject.GetComponent<InputBlock>();
         leftSet = null;
         rightSet = null;
     }
 
-    public void InputSet(HashSet<Jewel> set, bool leftInput) {
-        if (leftInput) {
+    public void InputSet(HashSet<Jewel> set, bool leftInput)
+    {
+        if (leftInput)
+        {
             leftSet = set;
         }
-        else {
+        else
+        {
             rightSet = set;
         }
-        
-        if (leftSet != null && rightSet != null) {
-            HashSet<Jewel> outputSet = new HashSet<Jewel>();
-            /*Debug.Log("Left Set");
-            setToString(leftSet);
-            Debug.Log("right Set");
-            setToString(rightSet);*/
-            switch (type)
-            {
-                case Operators.Union:
+
+        HashSet<Jewel> outputSet = new HashSet<Jewel>();
+        switch (type)
+        {
+            case Operators.Union:
+                if (leftSet == null && rightSet == null)
+                {
+                    output.InputSet(null);
+                }
+                else
+                {
+                    if (leftSet == null) leftSet = new HashSet<Jewel>();
+                    if (rightSet == null) rightSet = new HashSet<Jewel>();
                     outputSet.UnionWith(leftSet);
                     outputSet.UnionWith(rightSet);
                     output.InputSet(outputSet);
-                    Debug.Log("output Set:");
-                    setToString(outputSet);
-                    break;
-                case Operators.Intersect:
+                }
+                break;
+            case Operators.Intersect:
+                if (leftSet == null || rightSet == null)
+                {
+                    output.InputSet(null);
+                }
+                else
+                {
                     outputSet.UnionWith(leftSet);
                     outputSet.IntersectWith(rightSet);
                     output.InputSet(outputSet);
-                    break;
-                case Operators.Difference:
+                }
+                break;
+            case Operators.Difference:
+                if (rightSet == null)
+                {
+                    output.InputSet(null);
+                }
+                else
+                {
+                    if (leftSet == null) leftSet = new HashSet<Jewel>();
                     foreach (Jewel jewel in leftSet)
                     {
                         if (!rightSet.Contains(jewel))
@@ -60,8 +81,8 @@ public class UnionIntersectDifference : MonoBehaviour, Operator {
                         }
                     }
                     output.InputSet(outputSet);
-                    break;
-            }
+                }
+                break;
         }
     }
 

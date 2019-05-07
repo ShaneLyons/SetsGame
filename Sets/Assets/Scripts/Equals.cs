@@ -11,8 +11,9 @@ public class Equals : MonoBehaviour, Operator {
     // Start is called before the first frame update
     void Start() {
         output = outputObject.GetComponent<Goal>();
-        leftSet = new HashSet<Jewel>();
-        rightSet = new HashSet<Jewel>();
+        leftSet = null;
+        rightSet = null;
+        InputSet(null, true);
     }
 
     public void InputSet(HashSet<Jewel> set, bool leftInput) {
@@ -22,7 +23,7 @@ public class Equals : MonoBehaviour, Operator {
         else {
             rightSet = set;
         }
-        bool outputValue = leftSet.SetEquals(rightSet);
+        bool outputValue = leftSet != null && rightSet != null && leftSet.SetEquals(rightSet);
         output.InputResult(outputValue);
     }
 }
