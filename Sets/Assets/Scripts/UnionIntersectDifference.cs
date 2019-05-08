@@ -50,11 +50,11 @@ public class UnionIntersectDifference : MonoBehaviour, Operator
                     if (rightSet == null) rightSet = new HashSet<Jewel>();
                     outputSet.UnionWith(leftSet);
                     outputSet.UnionWith(rightSet);
-                    output.InputSet(outputSet);
                     Debug.Log("Union left: ");
                     setToString(leftSet);
                     Debug.Log("Union right: ");
                     setToString(rightSet);
+                    output.InputSet(outputSet);
                     Debug.Log("Union output: ");
                     setToString(outputSet);
                 }
