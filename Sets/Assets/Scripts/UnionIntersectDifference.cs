@@ -17,9 +17,11 @@ public class UnionIntersectDifference : MonoBehaviour, Operator
     private HashSet<Jewel> rightSet;
     public GameObject outputObject;
     private InputBlock output;
+    private LightRope rope;
 
     void Start()
     {
+        rope = GetComponentInChildren<LightRope>();
         output = outputObject.GetComponent<InputBlock>();
         leftSet = null;
         rightSet = null;
@@ -34,6 +36,15 @@ public class UnionIntersectDifference : MonoBehaviour, Operator
         else
         {
             rightSet = set;
+        }
+
+        if (leftSet != null && rightSet != null)
+        {
+            rope.TurnOn();
+        }
+        else
+        {
+            rope.TurnOff();
         }
 
         HashSet<Jewel> outputSet = new HashSet<Jewel>();
