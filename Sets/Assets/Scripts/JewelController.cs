@@ -39,4 +39,9 @@ public class JewelController : MonoBehaviour
     {
         sprite.enabled = true;
     }
+
+    public void setColor(Jewel color)
+    {
+        type = color;
+    }
 }

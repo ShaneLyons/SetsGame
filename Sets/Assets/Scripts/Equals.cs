@@ -13,7 +13,6 @@ public class Equals : MonoBehaviour, Operator {
         output = outputObject.GetComponent<Goal>();
         leftSet = null;
         rightSet = null;
-        InputSet(null, true);
     }
 
     public void InputSet(HashSet<Jewel> set, bool leftInput) {

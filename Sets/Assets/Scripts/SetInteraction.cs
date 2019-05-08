@@ -97,6 +97,8 @@ public class SetInteraction : MonoBehaviour
 
     private Collider2D getCollider(List<Collider2D> collisions)
     {
+        // in the cases where the input has a set in it or we are holding a set,
+        // we will want to interact with any input we are touching first
         foreach (Collider2D collision in collisions)
         {
             if (collision.tag == "Input")
@@ -107,6 +109,15 @@ public class SetInteraction : MonoBehaviour
                 }
             }
         }
+        // if we hold nothing and the set is empty, we will want to pick up the set
+        foreach (Collider2D collision in collisions)
+        {
+            if (collision.tag == "Set")
+            {
+                return collision;
+            }
+        }
+        // we should never actually reach here, just to stop compiler errors
         return collisions[0];
     }
 
