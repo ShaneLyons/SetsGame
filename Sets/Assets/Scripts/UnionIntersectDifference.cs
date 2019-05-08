@@ -51,6 +51,12 @@ public class UnionIntersectDifference : MonoBehaviour, Operator
                     outputSet.UnionWith(leftSet);
                     outputSet.UnionWith(rightSet);
                     output.InputSet(outputSet);
+                    Debug.Log("Union left: ");
+                    setToString(leftSet);
+                    Debug.Log("Union right: ");
+                    setToString(rightSet);
+                    Debug.Log("Union output: ");
+                    setToString(outputSet);
                 }
                 break;
             case Operators.Intersect:
@@ -63,6 +69,8 @@ public class UnionIntersectDifference : MonoBehaviour, Operator
                     outputSet.UnionWith(leftSet);
                     outputSet.IntersectWith(rightSet);
                     output.InputSet(outputSet);
+                    Debug.Log("Intersect output: ");
+                    setToString(outputSet);
                 }
                 break;
             case Operators.Difference:
@@ -81,6 +89,8 @@ public class UnionIntersectDifference : MonoBehaviour, Operator
                         }
                     }
                     output.InputSet(outputSet);
+                    Debug.Log("Difference output: ");
+                    setToString(outputSet);
                 }
                 break;
         }

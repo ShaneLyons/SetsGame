@@ -45,9 +45,19 @@ public class ActiveInput : MonoBehaviour, InputBlock {
     }
 
     public void InputSet(HashSet<Jewel> set) {
-        Debug.Log("inputted set");
-        Debug.Log(set);
+        Debug.Log("Inputted set: ");
+        setToString(set);
         GetComponentInParent<Operator>().InputSet(set, isLeftInput);
+    }
+
+    public void setToString(HashSet<Jewel> set)
+    {
+        string colors = "";
+        foreach (Jewel jewel in set)
+        {
+            colors += jewel.ToString() + ", ";
+        }
+        Debug.Log(colors);
     }
 
     public bool holdsSet() {
