@@ -38,13 +38,27 @@ public class UnionIntersectDifference : MonoBehaviour, Operator
             rightSet = set;
         }
 
-        if (leftSet != null && rightSet != null)
+        // some logic to deal with lighting ropes
+        int filledSets = 0;
+        if (leftSet != null && leftSet.Count > 0)
         {
-            if (rope) rope.TurnOn();
+            filledSets += 1;
         }
-        else
+        if (rightSet != null && rightSet.Count > 0)
         {
-            if (rope) rope.TurnOff();
+            filledSets += 1;
+        }
+
+        if (rope) rope.TurnOff();
+        if (filledSets > 0)
+        {
+            if (filledSets == 1)
+            {
+                if (rope) rope.TurnOn(.5f);
+            } else
+            {
+                if (rope) rope.TurnOn(1.0f);
+            }
         }
 
         HashSet<Jewel> outputSet = new HashSet<Jewel>();
