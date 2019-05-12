@@ -81,10 +81,12 @@ public class PlayerController : PhysicsObject
         }
         
         //If fall off screen
-        if (transform.position.y < -5f)
+        if (transform.position.y < -7f)
         {
-            transform.SetPositionAndRotation(new Vector3(startPositionX, startPositionY, 0), Quaternion.Euler(new Vector3(0, 0, 0)));
+            transform.SetPositionAndRotation(new Vector3(startPositionX, startPositionY, 0), Quaternion.identity);
+            GetComponent<PlayerFadeIn>().FadeIn();
         }
+
         targetVelocity = move * maxSpeed;
     }
 }

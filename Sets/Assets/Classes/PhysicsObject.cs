@@ -75,6 +75,11 @@ public class PhysicsObject : MonoBehaviour
         Movement(move, true);
     }
 
+    public void ResetVelocity()
+    {
+        velocity = Vector2.zero;
+    }
+
     void Movement(Vector2 move, bool yMovement)
     {
         float distance = move.magnitude;

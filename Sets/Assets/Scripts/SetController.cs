@@ -30,6 +30,15 @@ public class SetController : MonoBehaviour
         startPositionY = transform.position.y;
     }
 
+    public void FixedUpdate()
+    {
+        if (transform.position.y < -7f)
+        {
+            GetComponent<PhysicsObject>().ResetVelocity();
+            transform.position = new Vector2(startPositionX, startPositionY);
+        }
+    }
+
     public HashSet<Jewel> getJewels() {
 		HashSet<Jewel> returnJewels = new HashSet<Jewel>();
 		foreach (GameObject jewel in jewels) {
@@ -66,8 +75,11 @@ public class SetController : MonoBehaviour
     }
 
     //Respawn sets when fall off screen
-    public void OnBecameInvisible()
-    {
-        sprite.transform.position = new Vector2(startPositionX, startPositionY);
-    }
+    // public void OnBecameInvisible()
+    // {
+    //     if (sprite.transform.position.y < -7f)
+    //     {
+    //         sprite.transform.position = new Vector2(startPositionX, startPositionY);
+    //     }
+    // }
 }
