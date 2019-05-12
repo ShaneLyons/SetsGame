@@ -40,11 +40,11 @@ public class UnionIntersectDifference : MonoBehaviour, Operator
 
         if (leftSet != null && rightSet != null)
         {
-            rope.TurnOn();
+            if (rope) rope.TurnOn();
         }
         else
         {
-            rope.TurnOff();
+            if (rope) rope.TurnOff();
         }
 
         HashSet<Jewel> outputSet = new HashSet<Jewel>();

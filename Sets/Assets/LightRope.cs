@@ -32,7 +32,6 @@ public class LightRope : MonoBehaviour
             timer += Time.deltaTime;
             for (int i = 0; i < lr.positionCount; i++)
             {
-                Debug.Log(lr.positionCount);
                 if (timer > interval * i)
                 {
                     lights[i].SetActive(true);

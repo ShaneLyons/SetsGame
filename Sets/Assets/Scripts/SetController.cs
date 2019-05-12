@@ -26,8 +26,8 @@ public class SetController : MonoBehaviour
 
         hitbox = GetComponent<Collider2D>();
 
-        startPositionX = sprite.transform.position.x;
-        startPositionY = sprite.transform.position.y;
+        startPositionX = transform.position.x;
+        startPositionY = transform.position.y;
     }
 
     public HashSet<Jewel> getJewels() {

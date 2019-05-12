@@ -13,7 +13,7 @@ public class FixedInput : MonoBehaviour, InputBlock {
 
     void Start() {
         HashSet<Jewel> set = new HashSet<Jewel>(jewels);
-        InputSet(set);
+        InputSet(new HashSet<Jewel>(set));
         populateView(set);
     }
 

@@ -11,7 +11,7 @@ public class PassiveInput : MonoBehaviour, InputBlock {
     public void InputSet(HashSet<Jewel> inputSet) {
         set = inputSet;
         GetComponentInParent<Operator>().InputSet(set, isLeftInput);
-        populateView(inputSet);
+        if (inputSet != null) populateView(inputSet);
     }
 
     private void populateView(HashSet<Jewel> inputSet)
