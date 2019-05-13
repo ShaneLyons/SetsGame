@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 4925621622127359782}
   - component: {fileID: 4925621622127359783}
   - component: {fileID: 4925621622127359780}
-  - component: {fileID: 4925621622127359779}
   m_Layer: 0
   m_Name: teleporter
   m_TagString: Untagged
@@ -176,19 +175,8 @@ MonoBehaviour:
   teleporter_unlit: {fileID: 21300000, guid: 3b69ce4a0f8d8284fb444baab1bcb712, type: 3}
   teleporter_lit: {fileID: 21300000, guid: f342924ea1f6e7342a40c85a22adacaf, type: 3}
   lightBeam: {fileID: 4925621622787777852}
---- !u!114 &4925621622127359779
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4925621622127359800}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 119f1813bda65f349ae857de839b1bee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Level 2
+  spriteRenderer: {fileID: 4925621622127359782}
+  sceneName: 
   player: {fileID: 0}
 --- !u!1 &4925621622787777852
 GameObject:
