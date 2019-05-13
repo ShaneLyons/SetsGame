@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 //using JewelEnum;
@@ -8,6 +8,8 @@ public class SetController : MonoBehaviour
 	private HashSet<GameObject> jewels;
     private SpriteRenderer sprite;
     private Collider2D hitbox;
+    private float startPositionX;
+    private float startPositionY;
 
     void Start()
     {
@@ -23,6 +25,18 @@ public class SetController : MonoBehaviour
         sprite = GetComponent<SpriteRenderer>();
 
         hitbox = GetComponent<Collider2D>();
+
+        startPositionX = transform.position.x;
+        startPositionY = transform.position.y;
+    }
+
+    public void FixedUpdate()
+    {
+        if (transform.position.y < -7f)
+        {
+            GetComponent<PhysicsObject>().ResetVelocity();
+            transform.position = new Vector2(startPositionX, startPositionY);
+        }
     }
 
     public HashSet<Jewel> getJewels() {
@@ -59,4 +73,13 @@ public class SetController : MonoBehaviour
     {
         hitbox.enabled = true;
     }
+
+    //Respawn sets when fall off screen
+    // public void OnBecameInvisible()
+    // {
+    //     if (sprite.transform.position.y < -7f)
+    //     {
+    //         sprite.transform.position = new Vector2(startPositionX, startPositionY);
+    //     }
+    // }
 }

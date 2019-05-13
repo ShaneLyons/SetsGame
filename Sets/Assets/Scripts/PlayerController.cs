@@ -19,6 +19,15 @@ public class PlayerController : PhysicsObject
 
     private bool facingRight = true;
 
+    private float startPositionX;
+    private float startPositionY;
+
+    private void Start()
+    {
+        startPositionX = anim.transform.position.x;
+        startPositionY = anim.transform.position.y;
+    }
+
     protected override void ComputeVelocity()
     {
         Vector2 move = Vector2.zero;
@@ -69,6 +78,14 @@ public class PlayerController : PhysicsObject
         if (!grounded && !anim.GetBool(FALLING))
         {
             anim.SetBool(FALLING, true);
+        }
+        
+        //If fall off screen
+        if (transform.position.y < -7f)
+        {
+            transform.SetPositionAndRotation(new Vector3(startPositionX, startPositionY, 0), Quaternion.identity);
+            velocity.y = jumpTakeOffSpeed;
+            GetComponent<PlayerFadeIn>().FadeIn();
         }
 
         targetVelocity = move * maxSpeed;

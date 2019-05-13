@@ -36,6 +36,7 @@ public class SetInteraction : MonoBehaviour
             {
                 holdingSet = false;
                 heldSet.transform.position = newSetPosition();
+                FindObjectOfType<AudioManagerController>().Play("PutDown");
             }
         }
 
@@ -91,12 +92,15 @@ public class SetInteraction : MonoBehaviour
                 heldSet.transform.position = (Vector2)gameObject.transform.position + new Vector2(0, 1);
                 holdingSet = true;
                 pickedUp = true;
+                FindObjectOfType<AudioManagerController>().Play("PickUp");
             }
         }
     }
 
     private Collider2D getCollider(List<Collider2D> collisions)
     {
+        // in the cases where the input has a set in it or we are holding a set,
+        // we will want to interact with any input we are touching first
         foreach (Collider2D collision in collisions)
         {
             if (collision.tag == "Input")
@@ -107,6 +111,15 @@ public class SetInteraction : MonoBehaviour
                 }
             }
         }
+        // if we hold nothing and the set is empty, we will want to pick up the set
+        foreach (Collider2D collision in collisions)
+        {
+            if (collision.tag == "Set")
+            {
+                return collision;
+            }
+        }
+        // we should never actually reach here, just to stop compiler errors
         return collisions[0];
     }
 
@@ -115,6 +128,7 @@ public class SetInteraction : MonoBehaviour
         holdingSet = true;
         heldSet = input.RemoveSet();
         heldSet.transform.position = ((Vector2)gameObject.transform.position + new Vector2(0, 1));
+        FindObjectOfType<AudioManagerController>().Play("PickUp");
         pickedUp = true;
     }
 

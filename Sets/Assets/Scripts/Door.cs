@@ -4,40 +4,69 @@ using UnityEngine;
 
 public class Door : MonoBehaviour, Goal {
 
-    public Material successTexture;
-    public Material failTexture;
+    private Vector3 goalPosition;
+    private Vector3 startPosition;
 
-    // remove this after playtest
-    private Vector2 goalPosition;
+    private bool open;
+    private bool moving;
 
-    void Start() {
-        GetComponent<Renderer>().material = successTexture;
-        InputResult(false);
-        // remove this after playtest
-        goalPosition = transform.position;
+    public float openSpeed;
+
+    void Start()
+    {
+        startPosition = transform.position;
+        goalPosition = startPosition + new Vector3(0, 2, 0);
+        open = false;
+        moving = false;
     }
 
-    public void InputResult(bool isCorrect){
-        if (isCorrect) {
+    public void SuccessState() {
+        if (open)
+        {
+            moving = false;
+            open = true;
+        }
+        else
+        {
+            moving = true;
+            open = true;
+            FindObjectOfType<AudioManagerController>().Play("DoorMoving");
+        }
+    }
+
+    public void FailureState()
+    {
+        if(open){
+            moving = true;
+            open = false;
+            FindObjectOfType<AudioManagerController>().Play("DoorMoving");
+        } else {
+            moving = false;
+            open = false;
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (moving)
+        {
+            float yOffset = open ? goalPosition.y - transform.position.y : transform.position.y - startPosition.y;
+            if (yOffset < 0.1)
+            {
+                moving = false;
+                FindObjectOfType<AudioManagerController>().Stop("DoorMoving");
+                FindObjectOfType<AudioManagerController>().Play("DoorSlam");
+            }
+            transform.position += open ? new Vector3(0,openSpeed*0.1f,0) : new Vector3(0,-openSpeed*0.1f,0);
+        }
+    }
+
+    public void InputResult(bool isCorrect)
+    {
+        if(isCorrect){
             SuccessState();
         } else {
             FailureState();
         }
-    }
-
-    // remove this after playtest
-    void Update()
-    {
-        transform.position = goalPosition;
-    }
-
-    public void SuccessState() {
-        GetComponent<Renderer>().material = successTexture;
-        // remove this after playtest
-        goalPosition = (Vector2) transform.position + new Vector2(0, 2);
-    }
-
-    public void FailureState() {
-        GetComponent<Renderer>().material = failTexture;
     }
 }

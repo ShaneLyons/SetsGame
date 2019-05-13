@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UnionIntersectDifference : MonoBehaviour, Operator {
-    public enum Operators {
+public class UnionIntersectDifference : MonoBehaviour, Operator
+{
+    public enum Operators
+    {
         Union,
         Intersect,
         Difference
@@ -15,43 +17,95 @@ public class UnionIntersectDifference : MonoBehaviour, Operator {
     private HashSet<Jewel> rightSet;
     public GameObject outputObject;
     private InputBlock output;
+    private LightRope rope;
 
-    // Start is called before the first frame update
-    void Start() {
+    void Start()
+    {
+        rope = GetComponentInChildren<LightRope>();
         output = outputObject.GetComponent<InputBlock>();
         leftSet = null;
         rightSet = null;
     }
 
-    public void InputSet(HashSet<Jewel> set, bool leftInput) {
-        if (leftInput) {
+    public void InputSet(HashSet<Jewel> set, bool leftInput)
+    {
+        if (leftInput)
+        {
             leftSet = set;
         }
-        else {
+        else
+        {
             rightSet = set;
         }
-        
-        if (leftSet != null && rightSet != null) {
-            HashSet<Jewel> outputSet = new HashSet<Jewel>();
-            /*Debug.Log("Left Set");
-            setToString(leftSet);
-            Debug.Log("right Set");
-            setToString(rightSet);*/
-            switch (type)
+
+        // some logic to deal with lighting ropes
+        int filledSets = 0;
+        if (leftSet != null && leftSet.Count > 0)
+        {
+            filledSets += 1;
+        }
+        if (rightSet != null && rightSet.Count > 0)
+        {
+            filledSets += 1;
+        }
+
+        if (rope) rope.TurnOff();
+        if (filledSets > 0)
+        {
+            if (filledSets == 1)
             {
-                case Operators.Union:
+                if (rope) rope.TurnOn(.5f);
+            } else
+            {
+                if (rope) rope.TurnOn(1.0f);
+            }
+        }
+
+        HashSet<Jewel> outputSet = new HashSet<Jewel>();
+        switch (type)
+        {
+            case Operators.Union:
+                if (leftSet == null && rightSet == null)
+                {
+                    output.InputSet(null);
+                }
+                else
+                {
+                    if (leftSet == null) leftSet = new HashSet<Jewel>();
+                    if (rightSet == null) rightSet = new HashSet<Jewel>();
                     outputSet.UnionWith(leftSet);
                     outputSet.UnionWith(rightSet);
+                    //Debug.Log("Union left: ");
+                    //setToString(leftSet);
+                    //Debug.Log("Union right: ");
+                    //setToString(rightSet);
                     output.InputSet(outputSet);
-                    Debug.Log("output Set:");
-                    setToString(outputSet);
-                    break;
-                case Operators.Intersect:
+                    //Debug.Log("Union output: ");
+                    //setToString(outputSet);
+                }
+                break;
+            case Operators.Intersect:
+                if (leftSet == null || rightSet == null)
+                {
+                    output.InputSet(null);
+                }
+                else
+                {
                     outputSet.UnionWith(leftSet);
                     outputSet.IntersectWith(rightSet);
                     output.InputSet(outputSet);
-                    break;
-                case Operators.Difference:
+                    //Debug.Log("Intersect output: ");
+                    //setToString(outputSet);
+                }
+                break;
+            case Operators.Difference:
+                if (rightSet == null)
+                {
+                    output.InputSet(null);
+                }
+                else
+                {
+                    if (leftSet == null) leftSet = new HashSet<Jewel>();
                     foreach (Jewel jewel in leftSet)
                     {
                         if (!rightSet.Contains(jewel))
@@ -60,8 +114,10 @@ public class UnionIntersectDifference : MonoBehaviour, Operator {
                         }
                     }
                     output.InputSet(outputSet);
-                    break;
-            }
+                    //Debug.Log("Difference output: ");
+                    //setToString(outputSet);
+                }
+                break;
         }
     }
 

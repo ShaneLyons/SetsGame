@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LoadSceneWhenPass : MonoBehaviour
 {
-    public int sceneIndex;
+    public string sceneName;
     public GameObject player;
     // Start is called before the first frame update
     void Start()
@@ -23,7 +23,7 @@ public class LoadSceneWhenPass : MonoBehaviour
 
     public void loadByIndex()
     {
-        SceneManager.LoadScene(sceneIndex);
+        SceneManager.LoadScene(sceneName);
     }
 
 }

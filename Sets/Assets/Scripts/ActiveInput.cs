@@ -31,7 +31,9 @@ public class ActiveInput : MonoBehaviour, InputBlock {
         heldSet = inputSet;
         holdingSet = true;
         heldSet.transform.position = (Vector2) transform.position + new Vector2(0, 0.5f);
+        heldSet.transform.localScale = new Vector3((heldSet.transform.localScale.x)*0.7f, (heldSet.transform.localScale.y) * 0.7f, 0); //resizes smaller
         heldSet.hideCollider();
+        FindObjectOfType<AudioManagerController>().Play("PlaceSet");
         InputSet(set);
     }
 
@@ -40,12 +42,23 @@ public class ActiveInput : MonoBehaviour, InputBlock {
         // little fix for now, should improve later
         InputSet(null);
         holdingSet = false;
+        heldSet.transform.localScale = new Vector3((heldSet.transform.localScale.x) * (10f/7f), (heldSet.transform.localScale.y) * (10f/7f), 0); //resizes to original size
         heldSet.showCollider();
         return heldSet;
     }
 
     public void InputSet(HashSet<Jewel> set) {
         GetComponentInParent<Operator>().InputSet(set, isLeftInput);
+    }
+
+    public void setToString(HashSet<Jewel> set)
+    {
+        string colors = "";
+        foreach (Jewel jewel in set)
+        {
+            colors += jewel.ToString() + ", ";
+        }
+        Debug.Log(colors);
     }
 
     public bool holdsSet() {

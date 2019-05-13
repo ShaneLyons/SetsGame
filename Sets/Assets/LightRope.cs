@@ -11,7 +11,8 @@ public class LightRope : MonoBehaviour
     private float interval = .05f;
     private float timer = 0;
     private bool lit = false;
-    
+    private int lastLight = 0;
+
     public void Setup()
     {
         lights = new List<GameObject>();
@@ -30,7 +31,7 @@ public class LightRope : MonoBehaviour
         if (lit)
         {
             timer += Time.deltaTime;
-            for (int i = 0; i < lr.positionCount; i++)
+            for (int i = 0; i < lastLight; i++)
             {
                 if (timer > interval * i)
                 {
@@ -41,9 +42,14 @@ public class LightRope : MonoBehaviour
         }
     }
 
-    public void TurnOn()
+    public void TurnOn(float percentage)
     {
         lit = true;
+        // set the ending of where the light is based on the percentage dropped in
+        lastLight = (int) (percentage * lr.positionCount);
+        // needed to make the last bit of light up look normal
+        float halfwayTime = .25f * interval * lr.positionCount;
+        timer = lastLight == 0 ? 0 : halfwayTime;
     }
 
     public void TurnOff()
