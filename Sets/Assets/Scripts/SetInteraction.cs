@@ -7,6 +7,7 @@ public class SetInteraction : MonoBehaviour
     private BoxCollider2D hitbox;
     private bool holdingSet;
     private SetController heldSet;
+    public float holdHeight;
 
     // more efficient to only check when we enter and exit objects
     List<Collider2D> colliders = new List<Collider2D>();
@@ -30,7 +31,7 @@ public class SetInteraction : MonoBehaviour
 
         if (holdingSet)
         {
-            heldSet.transform.position = ((Vector2) gameObject.transform.position + new Vector2(0, 1));
+            heldSet.transform.position = ((Vector2) gameObject.transform.position + new Vector2(0, 0.5f));
             // dropping a set
             if (Input.GetKeyDown(KeyCode.Space) && !pickedUp)
             {
@@ -89,7 +90,7 @@ public class SetInteraction : MonoBehaviour
                     heldSet.transform.position = gameObject.transform.position;
                 }
                 heldSet = nextSet;
-                heldSet.transform.position = (Vector2)gameObject.transform.position + new Vector2(0, 1);
+                heldSet.transform.position = (Vector2)gameObject.transform.position + new Vector2(0, 0.5f);
                 holdingSet = true;
                 pickedUp = true;
                 FindObjectOfType<AudioManagerController>().Play("PickUp");
@@ -127,7 +128,7 @@ public class SetInteraction : MonoBehaviour
     {
         holdingSet = true;
         heldSet = input.RemoveSet();
-        heldSet.transform.position = ((Vector2)gameObject.transform.position + new Vector2(0, 1));
+        heldSet.transform.position = ((Vector2)gameObject.transform.position + new Vector2(0, 0.5f));
         FindObjectOfType<AudioManagerController>().Play("PickUp");
         pickedUp = true;
     }
