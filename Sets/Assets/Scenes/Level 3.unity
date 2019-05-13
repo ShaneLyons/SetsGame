@@ -2211,6 +2211,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 0.09
       objectReference: {fileID: 0}
+    - target: {fileID: 4925621622127359780, guid: 9b07a2a5962b0ab4e9491c7355e7612b,
+        type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 659601123}
     - target: {fileID: 4925621622127359779, guid: 9b07a2a5962b0ab4e9491c7355e7612b,
         type: 3}
       propertyPath: sceneName
@@ -2226,6 +2231,12 @@ PrefabInstance:
 --- !u!1 &659601122 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4925621622127359800, guid: 9b07a2a5962b0ab4e9491c7355e7612b,
+    type: 3}
+  m_PrefabInstance: {fileID: 659601121}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &659601123 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4925621622127359782, guid: 9b07a2a5962b0ab4e9491c7355e7612b,
     type: 3}
   m_PrefabInstance: {fileID: 659601121}
   m_PrefabAsset: {fileID: 0}

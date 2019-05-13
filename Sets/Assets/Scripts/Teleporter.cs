@@ -7,7 +7,7 @@ public class Teleporter : MonoBehaviour, Goal
     public Sprite teleporter_unlit; 
     public Sprite teleporter_lit;
     public GameObject lightBeam;
-    private SpriteRenderer spriteRenderer;
+    public SpriteRenderer spriteRenderer;
     // Start is called before the first frame update
     void Start()
     {
