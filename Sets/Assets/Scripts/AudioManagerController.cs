@@ -27,6 +27,10 @@ public class AudioManagerController : MonoBehaviour
         }
     }
 
+    void Start(){
+        Play("GameplayMusic");
+    }
+
     public void Play(string name){
         Sound s = GetSound(name);
         s.source.Play();

@@ -80,6 +80,12 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: GameplayMusic
+    clip: {fileID: 8300000, guid: c6f4afed73a834f24a87ca030d13087e, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
   - name: PowerDown
     clip: {fileID: 8300000, guid: de2cb8fc30df4465d8190150b66fdb49, type: 3}
     volume: 0.25
