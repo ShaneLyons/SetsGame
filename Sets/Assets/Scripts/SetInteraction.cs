@@ -36,6 +36,7 @@ public class SetInteraction : MonoBehaviour
             {
                 holdingSet = false;
                 heldSet.transform.position = newSetPosition();
+                FindObjectOfType<AudioManagerController>().Play("PutDown");
             }
         }
 
@@ -91,6 +92,7 @@ public class SetInteraction : MonoBehaviour
                 heldSet.transform.position = (Vector2)gameObject.transform.position + new Vector2(0, 1);
                 holdingSet = true;
                 pickedUp = true;
+                FindObjectOfType<AudioManagerController>().Play("PickUp");
             }
         }
     }
@@ -126,6 +128,7 @@ public class SetInteraction : MonoBehaviour
         holdingSet = true;
         heldSet = input.RemoveSet();
         heldSet.transform.position = ((Vector2)gameObject.transform.position + new Vector2(0, 1));
+        FindObjectOfType<AudioManagerController>().Play("PickUp");
         pickedUp = true;
     }
 

@@ -33,7 +33,7 @@ public class ActiveInput : MonoBehaviour, InputBlock {
         heldSet.transform.position = (Vector2) transform.position + new Vector2(0, 0.5f);
         heldSet.transform.localScale = new Vector3((heldSet.transform.localScale.x)*0.7f, (heldSet.transform.localScale.y) * 0.7f, 0); //resizes smaller
         heldSet.hideCollider();
-        // FindObjectOfType<AudioManagerController>().Play("PlaceSet");
+        FindObjectOfType<AudioManagerController>().Play("PlaceSet");
         InputSet(set);
     }
 

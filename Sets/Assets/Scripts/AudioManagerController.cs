@@ -28,12 +28,22 @@ public class AudioManagerController : MonoBehaviour
     }
 
     public void Play(string name){
-        Debug.Log("playing");
-        Sound s = Array.Find(sounds, sound => sound.name == name);
-        if(s == null){
-            Debug.LogWarning("Sound " + name + " not found");
-            return;
-        }
+        Sound s = GetSound(name);
         s.source.Play();
+    }
+
+    public void Stop(string name){
+        Sound s = GetSound(name);
+        s.source.Stop();
+    }
+
+    private Sound GetSound(string name){
+        Sound s = Array.Find(sounds, sound => sound.name == name);
+        if (s == null)
+        {
+            Debug.LogWarning("Sound " + name + " not found");
+            return null;
+        }
+        return s;
     }
 }

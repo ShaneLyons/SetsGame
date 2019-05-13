@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3605667491211574492
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3605667491211574490}
+  - component: {fileID: 3605667491211574491}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3605667491211574490
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3605667491211574492}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3605667491211574491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3605667491211574492}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d58bcc28d7a1046e89c8796bac0686b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: PlaceSet
+    clip: {fileID: 8300000, guid: 85de86a8f35344f6c87882510f31eace, type: 3}
+    volume: 0.49
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: DoorMoving
+    clip: {fileID: 8300000, guid: 11b71483dab434a82ba9c876f21bff94, type: 3}
+    volume: 0.51
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: DoorSlam
+    clip: {fileID: 8300000, guid: 42c0863bf89ff4fde97caa3da33adbb0, type: 3}
+    volume: 0.77
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PickUp
+    clip: {fileID: 8300000, guid: 652b0a8ddaa6a40a7931ad459e048920, type: 3}
+    volume: 0.41
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PutDown
+    clip: {fileID: 8300000, guid: c05ca01f92c8946028293679b382b6e8, type: 3}
+    volume: 0.41
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PowerUp
+    clip: {fileID: 8300000, guid: d2753f018dfac4bc08bc539c891fa64c, type: 3}
+    volume: 0.25
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: PowerDown
+    clip: {fileID: 8300000, guid: de2cb8fc30df4465d8190150b66fdb49, type: 3}
+    volume: 0.25
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
