@@ -84,7 +84,7 @@ public class PlayerController : PhysicsObject
         if (transform.position.y < -7f)
         {
             transform.SetPositionAndRotation(new Vector3(startPositionX, startPositionY, 0), Quaternion.identity);
-            velocity.y = jumpTakeOffSpeed;
+            velocity.y = 0;
             GetComponent<PlayerFadeIn>().FadeIn();
         }
 

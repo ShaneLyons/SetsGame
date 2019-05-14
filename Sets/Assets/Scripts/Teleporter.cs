@@ -46,6 +46,7 @@ public class Teleporter : MonoBehaviour, Goal
 
     public void loadByIndex()
     {
+        FindObjectOfType<AudioManagerController>().Play("Warp");
         SceneManager.LoadScene(sceneName);
     }
 

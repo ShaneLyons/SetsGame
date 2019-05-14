@@ -81,13 +81,19 @@ MonoBehaviour:
     loop: 0
     source: {fileID: 0}
   - name: GameplayMusic
-    clip: {fileID: 8300000, guid: c6f4afed73a834f24a87ca030d13087e, type: 3}
+    clip: {fileID: 8300000, guid: 0bbebfdd67ea84df7aa5ea955640f1bd, type: 3}
     volume: 0.5
     pitch: 1
     loop: 1
     source: {fileID: 0}
   - name: PowerDown
     clip: {fileID: 8300000, guid: de2cb8fc30df4465d8190150b66fdb49, type: 3}
+    volume: 0.25
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: Warp
+    clip: {fileID: 8300000, guid: 42ae8919cfd6b42d7a076b92b4acd830, type: 3}
     volume: 0.25
     pitch: 1
     loop: 0

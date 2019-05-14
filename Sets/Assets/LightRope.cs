@@ -50,7 +50,6 @@ public class LightRope : MonoBehaviour
             {
                 if (currentIndex > 0) currentIndex -= 1;
             }
-            Debug.Log(currentIndex);
             timer = interval;
             AdjustLights(currentIndex);
         }
