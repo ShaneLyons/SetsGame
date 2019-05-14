@@ -9,7 +9,10 @@ public class PhysicsObject : MonoBehaviour
     // used to tweak what's registered as ground vs wall
     public const float minGroundNormalY = .65f;
 
-    public const float gravityModifier = 1f;
+    [SerializeField]
+    public float gravityModifier = 1f;
+    [SerializeField]
+    private bool contactForTriggers = false;
 
     // api for subclasses
     protected Vector2 targetVelocity;
@@ -37,7 +40,7 @@ public class PhysicsObject : MonoBehaviour
     void Start()
     {
         // pass in game object layer for collisions
-        contactFilter.useTriggers = false;
+        contactFilter.useTriggers = contactForTriggers;
         contactFilter.SetLayerMask(Physics2D.GetLayerCollisionMask(gameObject.layer));
         contactFilter.useLayerMask = true;
 
@@ -125,6 +128,8 @@ public class PhysicsObject : MonoBehaviour
             }
         }
 
-        rb2d.position += move.normalized * distance;
+        Vector2 travel = move.normalized * distance;
+        transform.position += new Vector3(travel.x, travel.y, transform.position.z);
+        rb2d.position += travel;
     }
 }
