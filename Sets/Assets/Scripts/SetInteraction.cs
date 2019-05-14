@@ -31,7 +31,7 @@ public class SetInteraction : MonoBehaviour
 
         if (holdingSet)
         {
-            heldSet.transform.position = ((Vector2) gameObject.transform.position + new Vector2(0, 1.0f));
+            heldSet.transform.position = ((Vector2) gameObject.transform.position + new Vector2(0, .5f));
             // dropping a set
             if (Input.GetKeyDown(KeyCode.Space) && !pickedUp)
             {

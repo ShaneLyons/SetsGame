@@ -21,7 +21,7 @@ public class ActiveInput : MonoBehaviour, InputBlock {
     {
         if (holdingSet)
         {
-            heldSet.transform.position = (Vector2)transform.position + new Vector2(0, 0.6f);
+            heldSet.transform.position = (Vector2)transform.position + new Vector2(0, 0.42f);
         }
     }
 
@@ -30,7 +30,7 @@ public class ActiveInput : MonoBehaviour, InputBlock {
         set = inputSet.getJewels();
         heldSet = inputSet;
         holdingSet = true;
-        heldSet.transform.position = (Vector2) transform.position + new Vector2(0, 0.5f);
+        heldSet.transform.position = (Vector2) transform.position + new Vector2(0, 0.42f);
         heldSet.transform.localScale = new Vector3((heldSet.transform.localScale.x)*0.7f, (heldSet.transform.localScale.y) * 0.7f, 0); //resizes smaller
         heldSet.hideCollider();
         FindObjectOfType<AudioManagerController>().Play("PlaceSet");
