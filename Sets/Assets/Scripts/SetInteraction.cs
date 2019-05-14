@@ -31,10 +31,11 @@ public class SetInteraction : MonoBehaviour
 
         if (holdingSet)
         {
-            heldSet.transform.position = ((Vector2) gameObject.transform.position + new Vector2(0, 0.5f));
+            heldSet.transform.position = ((Vector2) gameObject.transform.position + new Vector2(0, 1.0f));
             // dropping a set
             if (Input.GetKeyDown(KeyCode.Space) && !pickedUp)
             {
+                Debug.Log("here");
                 holdingSet = false;
                 heldSet.transform.position = newSetPosition();
                 FindObjectOfType<AudioManagerController>().Play("PutDown");
