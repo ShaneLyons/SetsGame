@@ -10,8 +10,11 @@ public class LightRope : MonoBehaviour
     private List<GameObject> lights;
     private float interval = .05f;
     private float timer = 0;
-    private bool lit = false;
+    private bool fullyLit = false;
+    private bool halfLit = false;
     private int lastLight = 0;
+    private int currentIndex = 0;
+    private int halfway;
 
     public void Setup()
     {
@@ -23,41 +26,63 @@ public class LightRope : MonoBehaviour
             lights.Add(Instantiate(light, lr.GetPosition(i), Quaternion.identity, this.transform));
             lights[i].SetActive(false);
         }
+
+        halfway = (int)lights.Count/2;
+        Debug.Log(halfway);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (lit)
+        timer -= Time.deltaTime;
+
+        if (timer < 0)
         {
-            timer += Time.deltaTime;
-            for (int i = 0; i < lastLight; i++)
+            if (fullyLit)
             {
-                if (timer > interval * i)
-                {
-                    lights[i].SetActive(true);
-                    lights[i].transform.position = lr.GetPosition(i);
-                }
+                if (currentIndex < lights.Count - 1) currentIndex += 1;
             }
+            else if (halfLit)
+            {
+                if (currentIndex != halfway) currentIndex += (currentIndex - halfway) < 0 ? 1 : -1;
+            }
+            else
+            {
+                if (currentIndex > 0) currentIndex -= 1;
+            }
+            Debug.Log(currentIndex);
+            timer = interval;
+            AdjustLights(currentIndex);
         }
     }
 
-    public void TurnOn(float percentage)
+    private void AdjustLights(int maxLight){
+        for (int i = 0; i < lights.Count; i++)
+        {
+            lights[i].SetActive(i < maxLight);
+            lights[i].transform.position = lr.GetPosition(i);
+        }
+    }
+
+    public void TurnOn(bool halfLit)
     {
-        lit = true;
+        if (halfLit)
+        {
+            fullyLit = false;
+            this.halfLit = true;
+        } else {
+            fullyLit = true;
+            this.halfLit = false;
+        }
         // set the ending of where the light is based on the percentage dropped in
-        lastLight = (int) (percentage * lr.positionCount);
+
         // needed to make the last bit of light up look normal
-        float halfwayTime = .25f * interval * lr.positionCount;
-        timer = lastLight == 0 ? 0 : halfwayTime;
+        timer = interval;
     }
 
     public void TurnOff()
     {
-        lit = false;
-        for (int i = 0; i < lr.positionCount; i++)
-        {
-            lights[i].SetActive(false);
-        }
+        fullyLit = false;
+        halfLit = false;
     }
 }

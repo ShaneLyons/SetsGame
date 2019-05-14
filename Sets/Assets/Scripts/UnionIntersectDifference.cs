@@ -54,10 +54,10 @@ public class UnionIntersectDifference : MonoBehaviour, Operator
         {
             if (filledSets == 1)
             {
-                if (rope) rope.TurnOn(.5f);
+                if (rope) rope.TurnOn(true);
             } else
             {
-                if (rope) rope.TurnOn(1.0f);
+                if (rope) rope.TurnOn(false);
             }
         }
 
