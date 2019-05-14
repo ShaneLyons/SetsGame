@@ -24,11 +24,13 @@ public class FixedInput : MonoBehaviour, InputBlock {
 
     private void populateView(HashSet<Jewel> inputSet)
     {
-        // TODO: will probably have to change these to accompany multiple amounts of sets0
-        float offset = .2f;
-        float xOffset = .1f;
-        float yOffset = .15f;
-        float scaleFactor = .5f;
+        Dictionary<string, float> offsets = JewelOffsets.GetOffsets(inputSet.Count);
+        float xOffset = offsets["xOffset"];
+        float yOffset = offsets["yOffset"];
+        float xDiff = offsets["xDiff"];
+        float yDiff = offsets["yDiff"];
+        float scaleFactor = offsets["scaleFactor"];
+
         for (int i=0; i < visualSize; i++)
         {
             GameObject jewelSprite = Instantiate(jewelPrefab, transform);
@@ -36,7 +38,8 @@ public class FixedInput : MonoBehaviour, InputBlock {
             Vector3 scale = jewelSprite.transform.localScale;
             Vector3 pos = jewelSprite.transform.position;
             jewelSprite.transform.localScale = new Vector3(scale.x * .5f, scale.y, scale.z) * scaleFactor;
-            jewelSprite.transform.position = new Vector3(pos.x - xOffset + offset * i, pos.y + yOffset, pos.z);
+            float yWave = (i % 2 == 1) ? yDiff : 0;
+            jewelSprite.transform.position = new Vector3(pos.x - xOffset + xDiff * i, pos.y + yOffset + yWave, pos.z);
         }
     }
 }
