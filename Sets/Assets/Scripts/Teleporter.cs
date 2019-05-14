@@ -14,10 +14,13 @@ public class Teleporter : MonoBehaviour, Goal
     private ParticleSystem waveParticles;
     private bool on;
     // Start is called before the first frame update
-    void Start()
-    {
+    void Awake(){
         waveParticles = GetComponentInChildren<ParticleSystem>();
         waveParticles.Stop();
+    }
+
+    void Start()
+    {
         lightBeam.gameObject.SetActive(false);
         on = false;
         spriteRenderer = GetComponent<SpriteRenderer>(); // we are accessing the SpriteRenderer that is attached to the Gameobject

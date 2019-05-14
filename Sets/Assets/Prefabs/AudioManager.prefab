@@ -98,3 +98,15 @@ MonoBehaviour:
     pitch: 1
     loop: 0
     source: {fileID: 0}
+  - name: TitleMusic
+    clip: {fileID: 8300000, guid: 68aefe7b7722b496ab40ebd4a2e7f611, type: 3}
+    volume: 0.25
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: TutorialMusic
+    clip: {fileID: 8300000, guid: c6f4afed73a834f24a87ca030d13087e, type: 3}
+    volume: 0.25
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}

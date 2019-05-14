@@ -27,13 +27,14 @@ public class AudioManagerController : MonoBehaviour
         }
     }
 
-    void Start(){
-        Play("GameplayMusic");
-    }
-
     public void Play(string name){
         Sound s = GetSound(name);
         s.source.Play();
+    }
+
+    public bool IsPlaying(string name){
+        Sound s = GetSound(name);
+        return s.source.isPlaying;
     }
 
     public void Stop(string name){

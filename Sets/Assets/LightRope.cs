@@ -28,7 +28,6 @@ public class LightRope : MonoBehaviour
         }
 
         halfway = (int)lights.Count/2;
-        Debug.Log(halfway);
     }
 
     // Update is called once per frame
