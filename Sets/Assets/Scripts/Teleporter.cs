@@ -11,10 +11,13 @@ public class Teleporter : MonoBehaviour, Goal
     public SpriteRenderer spriteRenderer;
     public string sceneName;
     public GameObject player;
+    private ParticleSystem waveParticles;
     private bool on;
     // Start is called before the first frame update
     void Start()
     {
+        waveParticles = GetComponentInChildren<ParticleSystem>();
+        waveParticles.Stop();
         lightBeam.gameObject.SetActive(false);
         on = false;
         spriteRenderer = GetComponent<SpriteRenderer>(); // we are accessing the SpriteRenderer that is attached to the Gameobject
@@ -37,6 +40,7 @@ public class Teleporter : MonoBehaviour, Goal
     {
         spriteRenderer.sprite = teleporter_lit;
         lightBeam.gameObject.SetActive(true);
+        waveParticles.Play();
         //FindObjectOfType<AudioManagerController>().Play("DoorMoving");
     }
 
@@ -49,6 +53,7 @@ public class Teleporter : MonoBehaviour, Goal
     {
         spriteRenderer.sprite = teleporter_unlit;
         lightBeam.gameObject.SetActive(false);
+        waveParticles.Stop();
         //FindObjectOfType<AudioManagerController>().Play("DoorMoving");
     }
     
