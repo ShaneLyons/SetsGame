@@ -368,6 +368,11 @@ PrefabInstance:
       propertyPath: jewels.Array.data[1]
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 892203727870960461, guid: bfeffaeda9eee4786a6871a677ac3ab9,
+        type: 3}
+      propertyPath: visualSize
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfeffaeda9eee4786a6871a677ac3ab9, type: 3}
 --- !u!1001 &259214103
@@ -9588,6 +9593,11 @@ PrefabInstance:
         type: 3}
       propertyPath: jewels.Array.data[1]
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 892203727870960461, guid: bfeffaeda9eee4786a6871a677ac3ab9,
+        type: 3}
+      propertyPath: visualSize
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bfeffaeda9eee4786a6871a677ac3ab9, type: 3}

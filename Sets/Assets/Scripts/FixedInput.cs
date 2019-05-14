@@ -10,6 +10,7 @@ public class FixedInput : MonoBehaviour, InputBlock {
     [SerializeField]
     private static int setSize = 2;
     public Jewel[] jewels = new Jewel[setSize];
+    public int visualSize;
 
     void Start() {
         HashSet<Jewel> set = new HashSet<Jewel>(jewels);
@@ -28,7 +29,7 @@ public class FixedInput : MonoBehaviour, InputBlock {
         float xOffset = .1f;
         float yOffset = .15f;
         float scaleFactor = .5f;
-        for (int i=0; i < setSize; i++)
+        for (int i=0; i < visualSize; i++)
         {
             GameObject jewelSprite = Instantiate(jewelPrefab, transform);
             jewelSprite.GetComponent<JewelController>().setColor(jewels[i]);
