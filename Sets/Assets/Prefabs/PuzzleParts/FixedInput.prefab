@@ -68,7 +68,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d6ef9e8d5757fb847b975aa5a42eefef, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0aeba36753b2d1ba7b6574fe541612cf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.59607846}
   m_FlipX: 0
   m_FlipY: 0
@@ -127,6 +127,7 @@ MonoBehaviour:
   isLeftInput: 0
   jewelPrefab: {fileID: 0}
   jewels: 0000000002000000
+  visualSize: 0
 --- !u!212 &7749685890792807358
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -164,7 +165,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300012, guid: 8ba63b7c42b5beb45bf6d8668139a23e, type: 3}
+  m_Sprite: {fileID: 21300012, guid: 80028e277bd766be28a36c2be1ce5f3a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

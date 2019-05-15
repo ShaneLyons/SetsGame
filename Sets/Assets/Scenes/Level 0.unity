@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657892, g: 0.4964127, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -595,7 +595,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.56, y: 1.66}
+    oldSize: {x: 6.54, y: 1.64}
     newSize: {x: 2.74, y: 4.15}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -737,6 +737,17 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2.2
       objectReference: {fileID: 0}
+    - target: {fileID: 5949707233529901351, guid: 736218b9ea6671240a7bfecfb996b4d2,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949707233529901351, guid: 736218b9ea6671240a7bfecfb996b4d2,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300012, guid: 80028e277bd766be28a36c2be1ce5f3a,
+        type: 3}
     - target: {fileID: 5949707233529901349, guid: 736218b9ea6671240a7bfecfb996b4d2,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
@@ -782,11 +793,6 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[1].y
       value: 1.4524367
       objectReference: {fileID: 0}
-    - target: {fileID: 5949707233529901351, guid: 736218b9ea6671240a7bfecfb996b4d2,
-        type: 3}
-      propertyPath: m_FlipX
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5949707233529901349, guid: 736218b9ea6671240a7bfecfb996b4d2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 736218b9ea6671240a7bfecfb996b4d2, type: 3}
@@ -813,7 +819,7 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.56, y: 1.66}
+    oldSize: {x: 6.54, y: 1.64}
     newSize: {x: 2.74, y: 4.15}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -961,6 +967,17 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3244277167186292580, guid: ad63decf25873ad40ab1f890a20ac67d,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3244277167186292580, guid: ad63decf25873ad40ab1f890a20ac67d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 80028e277bd766be28a36c2be1ce5f3a,
+        type: 3}
     - target: {fileID: 3244277167186292582, guid: ad63decf25873ad40ab1f890a20ac67d,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
@@ -1065,11 +1082,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[9].y
       value: 0.62
-      objectReference: {fileID: 0}
-    - target: {fileID: 3244277167186292580, guid: ad63decf25873ad40ab1f890a20ac67d,
-        type: 3}
-      propertyPath: m_FlipX
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3244277167186292582, guid: ad63decf25873ad40ab1f890a20ac67d, type: 3}
@@ -1922,6 +1934,17 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2.67
       objectReference: {fileID: 0}
+    - target: {fileID: 3244277167186292580, guid: ad63decf25873ad40ab1f890a20ac67d,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3244277167186292580, guid: ad63decf25873ad40ab1f890a20ac67d,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 80028e277bd766be28a36c2be1ce5f3a,
+        type: 3}
     - target: {fileID: 3244277167186292582, guid: ad63decf25873ad40ab1f890a20ac67d,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
@@ -1956,11 +1979,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
       value: 0.747185
-      objectReference: {fileID: 0}
-    - target: {fileID: 3244277167186292580, guid: ad63decf25873ad40ab1f890a20ac67d,
-        type: 3}
-      propertyPath: m_FlipX
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3244277167186292582, guid: ad63decf25873ad40ab1f890a20ac67d, type: 3}
@@ -3336,6 +3354,12 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2873109002622824602, guid: fee28b82b296dd449a6dbdbb7e770a65,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300004, guid: 0aeba36753b2d1ba7b6574fe541612cf,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fee28b82b296dd449a6dbdbb7e770a65, type: 3}
 --- !u!1001 &7111892054269690725

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -683,6 +683,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2.3
       objectReference: {fileID: 0}
+    - target: {fileID: 5949707233529901351, guid: 736218b9ea6671240a7bfecfb996b4d2,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5949707233529901349, guid: 736218b9ea6671240a7bfecfb996b4d2,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
@@ -737,11 +742,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].y
       value: -1.3414881
-      objectReference: {fileID: 0}
-    - target: {fileID: 5949707233529901351, guid: 736218b9ea6671240a7bfecfb996b4d2,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 736218b9ea6671240a7bfecfb996b4d2, type: 3}
@@ -1741,7 +1741,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300012, guid: 8ba63b7c42b5beb45bf6d8668139a23e, type: 3}
+  m_Sprite: {fileID: 21300012, guid: 80028e277bd766be28a36c2be1ce5f3a, type: 3}
   m_Color: {r: 0, g: 0.85882354, b: 0.81305444, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -2540,7 +2540,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300012, guid: 8ba63b7c42b5beb45bf6d8668139a23e, type: 3}
+  m_Sprite: {fileID: 21300012, guid: 80028e277bd766be28a36c2be1ce5f3a, type: 3}
   m_Color: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -10877,6 +10877,24 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2873109002622824602, guid: fee28b82b296dd449a6dbdbb7e770a65,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300004, guid: 0aeba36753b2d1ba7b6574fe541612cf,
+        type: 3}
+    - target: {fileID: 2873109001377530764, guid: fee28b82b296dd449a6dbdbb7e770a65,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300004, guid: 0aeba36753b2d1ba7b6574fe541612cf,
+        type: 3}
+    - target: {fileID: 2873109001828055845, guid: fee28b82b296dd449a6dbdbb7e770a65,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300004, guid: 0aeba36753b2d1ba7b6574fe541612cf,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fee28b82b296dd449a6dbdbb7e770a65, type: 3}
 --- !u!1001 &3605667490684360199
