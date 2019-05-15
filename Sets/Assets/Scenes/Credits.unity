@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657892, g: 0.4964127, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -7650,7 +7650,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 10, y: 88.8}
-  m_SizeDelta: {x: 500, y: 100}
+  m_SizeDelta: {x: 575, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1794251391
 MonoBehaviour:
@@ -7685,11 +7685,12 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: "Project Manager: Emily Mattlin\r\n\nPuzzle Designers:  Severyn Kozak\r,
-    Shane Lyons, Jocelyn McGhee\n\nVisual Designers: Emily Mattlin, Pablo Villalobos\r\n\nSound
-    Designer: Jini Gabbidon\r\n\nStory Designers: Shane Lyons, Emily Mattlin\r, Pablo
-    Villalobos\n\nDevelopers: Jini Gabbidon, Severyn Kozak, Shane Lyons, Emily Mattlin,
-    Jocelyn McGhee, Pablo Villalobos\r\n"
+  m_Text: "Project Manager: Emily Mattlin\r\nPuzzle Designers:  Severyn Kozak\r, Shane
+    Lyons, Jocelyn McGhee\nVisual Designers: Jini Gabbidon, Emily Mattlin, Pablo Villalobos\r\nSound
+    Designer: Jini Gabbidon\r\nStory Designers: Shane Lyons, Emily Mattlin\r, Pablo
+    Villalobos\nDevelopers: Jini Gabbidon, Severyn Kozak, Shane Lyons, Emily Mattlin,
+    Jocelyn McGhee, Pablo Villalobos\r\n\nImages: \n\tUFO: https://cognigen-cellular.com/explore/ufo-clipart-cartoon/\n\tKeyboard:
+    https://sitejerk.com/images/space-bar-png-6.png"
 --- !u!222 &1794251392
 CanvasRenderer:
   m_ObjectHideFlags: 0
