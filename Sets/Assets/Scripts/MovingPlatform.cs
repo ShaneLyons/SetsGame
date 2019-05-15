@@ -10,8 +10,17 @@ public class MovingPlatform : MonoBehaviour, Goal
     public float speed;
     public bool vertical;
     private Vector2 startPosition;
+    private ParticleSystem waveParticles;
+    private SpriteRenderer renderer;
+    public Sprite turnedOn;
+    public Sprite turnedOff;
 
-    // Start is called before the first frame update
+    void Awake (){
+        renderer = GetComponent<SpriteRenderer>();
+        waveParticles = GetComponentInChildren<ParticleSystem>();
+        waveParticles.Stop();
+    }
+
     void Start()
     {
         startPosition = this.transform.position;
@@ -32,11 +41,15 @@ public class MovingPlatform : MonoBehaviour, Goal
     public void SuccessState()
     {
         moving = true;
+        waveParticles.Play();
+        renderer.sprite = turnedOn;
     }
 
     public void FailureState()
     {
         moving = false;
+        waveParticles.Stop();
+        renderer.sprite = turnedOff;
     }
 
     // Update is called once per frame
