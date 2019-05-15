@@ -1,4 +1,5 @@
 ﻿using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using System;
 
@@ -25,6 +26,24 @@ public class AudioManagerController : MonoBehaviour
             s.source.pitch = s.pitch;
             s.source.loop = s.loop;
         }
+    }
+
+    void OnEnable()
+    {
+        Debug.Log("OnEnable called");
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    void OnDisable()
+    {
+        Debug.Log("OnDisable called");
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Stop("Hover");
+        Stop("DoorMoving");
     }
 
     public void Play(string name){

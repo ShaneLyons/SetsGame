@@ -253,6 +253,11 @@ PrefabInstance:
       propertyPath: EmissionModule.rateOverTime.scalar
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 2815902770242668889, guid: 04da0f438a9bb4109b984e414f55705e,
+        type: 3}
+      propertyPath: InheritVelocityModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 04da0f438a9bb4109b984e414f55705e, type: 3}
 --- !u!4 &8279852414067223407 stripped

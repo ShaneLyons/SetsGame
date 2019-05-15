@@ -43,6 +43,7 @@ public class MovingPlatform : MonoBehaviour, Goal
         moving = true;
         waveParticles.Play();
         renderer.sprite = turnedOn;
+        FindObjectOfType<AudioManagerController>().Play("Hover");
     }
 
     public void FailureState()
@@ -50,6 +51,7 @@ public class MovingPlatform : MonoBehaviour, Goal
         moving = false;
         waveParticles.Stop();
         renderer.sprite = turnedOff;
+        FindObjectOfType<AudioManagerController>().Stop("Hover");
     }
 
     // Update is called once per frame

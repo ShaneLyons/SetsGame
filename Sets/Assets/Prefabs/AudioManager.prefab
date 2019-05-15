@@ -110,3 +110,9 @@ MonoBehaviour:
     pitch: 1
     loop: 1
     source: {fileID: 0}
+  - name: Hover
+    clip: {fileID: 8300000, guid: 485a3041a381c40c1a8e5275fe9aa37f, type: 3}
+    volume: 0.1
+    pitch: 2
+    loop: 1
+    source: {fileID: 0}
