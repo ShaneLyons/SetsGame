@@ -15,7 +15,7 @@ public class TutorialButtonScript : MonoBehaviour
 	bool hasMovedLeft, hasMovedRight, hasMovedUp, hasDoubleJumped;
     private ButtonState state;
 
-    void Awake()
+    void Start()
     {
         state = ButtonState.OFF;
         tutorialLeftFade = tutorialLeft.GetComponent<TutorialKeyFade>();
@@ -56,6 +56,13 @@ public class TutorialButtonScript : MonoBehaviour
         }
     }
 
+    private void Reset()
+    {
+        AllInvisible();
+        state = ButtonState.LEFTRIGHT;
+        FadeInLeftRightButtons();
+    }
+
     void FadeInLeftRightButtons(){
         tutorialLeftFade.FadeIn();
         tutorialRightFade.FadeIn();
@@ -85,6 +92,14 @@ public class TutorialButtonScript : MonoBehaviour
     {
         tutorialDoubleJump1Fade.FadeOut();
         tutorialDoubleJump2Fade.FadeOut();
+    }
+
+    void AllInvisible(){
+        tutorialUpFade.MakeInvisible();
+        tutorialRightFade.MakeInvisible();
+        tutorialLeftFade.MakeInvisible();
+        tutorialDoubleJump1Fade.MakeInvisible();
+        tutorialDoubleJump2Fade.MakeInvisible();
     }
 
     void maybeDisableLeftRight(){

@@ -15,7 +15,15 @@ public class PlayerFadeIn : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        sprites = GetComponentsInChildren<SpriteRenderer>();
+        sprites = new SpriteRenderer[]{};
+        List<SpriteRenderer> spriteList = new List<SpriteRenderer>();
+        foreach(SpriteRenderer renderer in GetComponentsInChildren<SpriteRenderer>()){
+            if (renderer.tag != "TutorialKey")
+            {
+                spriteList.Add(renderer);
+            }
+        }
+        sprites = spriteList.ToArray();
         fade = false;
     }
 
