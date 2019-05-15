@@ -96,6 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8d83c96f2ee5614b9c0569e30dd5e71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gravityModifier: 1
+  contactForTriggers: 0
   graphics: {fileID: 4969145180593969671}
   anim: {fileID: 4969145180593969668}
 --- !u!114 &3468414350306122443
@@ -123,8 +125,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6b0890658487ea4b9189cac28d2ed5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fadeInTime: 0.5
-  startingOpacity: 0
+  fadeTime: 0.5
+  fadeInStartOpacity: 0
+  fadeOutStartOpacity: 1
 --- !u!1 &4969145179510862973
 GameObject:
   m_ObjectHideFlags: 0

@@ -29,12 +29,13 @@ public class PlayerFadeIn : MonoBehaviour
             {
                 SetOpacity(1.0f);
                 fade = false;
-            } else
+            }
+            else
             {
                 float opacity = timer / fadeInTime;
                 SetOpacity(opacity);
             }
-        }   
+        }
     }
 
     public void FadeIn()
