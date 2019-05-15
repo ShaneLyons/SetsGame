@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -683,11 +683,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 2.3
       objectReference: {fileID: 0}
-    - target: {fileID: 5949707233529901351, guid: 736218b9ea6671240a7bfecfb996b4d2,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 5949707233529901349, guid: 736218b9ea6671240a7bfecfb996b4d2,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.size
@@ -742,6 +737,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].y
       value: -1.3414881
+      objectReference: {fileID: 0}
+    - target: {fileID: 5949707233529901351, guid: 736218b9ea6671240a7bfecfb996b4d2,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 736218b9ea6671240a7bfecfb996b4d2, type: 3}
@@ -2018,7 +2018,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: f980f1ea2ab8bf34281ca9dcd3cb20a9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 406c842094d73b04284e5b1689d49031, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 0.75686276}
   m_FlipX: 0
   m_FlipY: 0
@@ -7993,6 +7993,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1742643113}
     m_Modifications:
+    - target: {fileID: 7428664386037767969, guid: 2418764e4eb975c4698be923f21fe7a5,
+        type: 3}
+      propertyPath: m_Name
+      value: Jewel
+      objectReference: {fileID: 0}
     - target: {fileID: 7428664386037767970, guid: 2418764e4eb975c4698be923f21fe7a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8047,11 +8052,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7428664386037767969, guid: 2418764e4eb975c4698be923f21fe7a5,
-        type: 3}
-      propertyPath: m_Name
-      value: Jewel
       objectReference: {fileID: 0}
     - target: {fileID: 7428664386037767971, guid: 2418764e4eb975c4698be923f21fe7a5,
         type: 3}
@@ -9003,6 +9003,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 388223122}
     m_Modifications:
+    - target: {fileID: 7428664386037767969, guid: 2418764e4eb975c4698be923f21fe7a5,
+        type: 3}
+      propertyPath: m_Name
+      value: Jewel
+      objectReference: {fileID: 0}
     - target: {fileID: 7428664386037767970, guid: 2418764e4eb975c4698be923f21fe7a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9057,11 +9062,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7428664386037767969, guid: 2418764e4eb975c4698be923f21fe7a5,
-        type: 3}
-      propertyPath: m_Name
-      value: Jewel
       objectReference: {fileID: 0}
     - target: {fileID: 7428664386037767971, guid: 2418764e4eb975c4698be923f21fe7a5,
         type: 3}
@@ -10179,6 +10179,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4969145179442405095, guid: a1ff044a479434f4c95a30a1e5e1b51b,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.05459994
+      objectReference: {fileID: 0}
+    - target: {fileID: 4969145179442405095, guid: a1ff044a479434f4c95a30a1e5e1b51b,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.6908001
+      objectReference: {fileID: 0}
     - target: {fileID: 4969145179442405092, guid: a1ff044a479434f4c95a30a1e5e1b51b,
         type: 3}
       propertyPath: spawnPoint
@@ -10238,16 +10248,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4969145179442405095, guid: a1ff044a479434f4c95a30a1e5e1b51b,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: -0.05459994
-      objectReference: {fileID: 0}
-    - target: {fileID: 4969145179442405095, guid: a1ff044a479434f4c95a30a1e5e1b51b,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 0.6908001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1ff044a479434f4c95a30a1e5e1b51b, type: 3}
