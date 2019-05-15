@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class ButtonSounds : MonoBehaviour, IPointerEnterHandler, IPointerDownHandler
 {
+    public bool isBackButton;
+
     public void OnPointerEnter(PointerEventData ped)
     {
         FindObjectOfType<AudioManagerController>().Play("MouseOverButton");
@@ -13,6 +15,11 @@ public class ButtonSounds : MonoBehaviour, IPointerEnterHandler, IPointerDownHan
 
     public void OnPointerDown(PointerEventData ped)
     {
-        FindObjectOfType<AudioManagerController>().Play("MouseClickButton");
+        if (!isBackButton)
+        {
+            FindObjectOfType<AudioManagerController>().Play("MouseClickButton");
+        } else {
+            FindObjectOfType<AudioManagerController>().Play("MouseClickButtonBack");
+        }
     }
 }

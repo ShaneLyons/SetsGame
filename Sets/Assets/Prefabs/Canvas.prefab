@@ -410,6 +410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc2f2046a9fd545689c966b5cc92f2d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBackButton: 1
 --- !u!1 &2873109001828055854
 GameObject:
   m_ObjectHideFlags: 0
@@ -583,6 +584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc2f2046a9fd545689c966b5cc92f2d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBackButton: 1
 --- !u!1 &2873109001963267078
 GameObject:
   m_ObjectHideFlags: 0
@@ -1039,3 +1041,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc2f2046a9fd545689c966b5cc92f2d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isBackButton: 0
