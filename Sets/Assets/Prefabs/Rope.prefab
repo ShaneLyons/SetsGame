@@ -71,7 +71,7 @@ LineRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Positions:
   - {x: 0, y: 0, z: 0}
   - {x: 0, y: 0, z: 1}
@@ -180,7 +180,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   light: {fileID: 241379470361404847, guid: a685fb1423e30674680763f99f72f8ab, type: 3}
-  test: 0
 --- !u!1 &2230902602738035605
 GameObject:
   m_ObjectHideFlags: 0
