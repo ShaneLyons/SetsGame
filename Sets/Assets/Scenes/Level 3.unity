@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -653,11 +653,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 721137459}
     m_Modifications:
-    - target: {fileID: 7428664386037767969, guid: 2418764e4eb975c4698be923f21fe7a5,
-        type: 3}
-      propertyPath: m_Name
-      value: Jewel
-      objectReference: {fileID: 0}
     - target: {fileID: 7428664386037767970, guid: 2418764e4eb975c4698be923f21fe7a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -712,6 +707,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7428664386037767969, guid: 2418764e4eb975c4698be923f21fe7a5,
+        type: 3}
+      propertyPath: m_Name
+      value: Jewel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7428664386037767971, guid: 2418764e4eb975c4698be923f21fe7a5,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9169328853364272095, guid: 2418764e4eb975c4698be923f21fe7a5,
         type: 3}
@@ -963,7 +968,7 @@ PrefabInstance:
     - target: {fileID: 908982936488963568, guid: d02e5b02c1be5448f83f25901de7a453,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d02e5b02c1be5448f83f25901de7a453, type: 3}
@@ -1299,11 +1304,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2076108930}
     m_Modifications:
-    - target: {fileID: 7428664386037767969, guid: 2418764e4eb975c4698be923f21fe7a5,
-        type: 3}
-      propertyPath: m_Name
-      value: Jewel
-      objectReference: {fileID: 0}
     - target: {fileID: 7428664386037767970, guid: 2418764e4eb975c4698be923f21fe7a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1359,10 +1359,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7428664386037767969, guid: 2418764e4eb975c4698be923f21fe7a5,
+        type: 3}
+      propertyPath: m_Name
+      value: Jewel
+      objectReference: {fileID: 0}
     - target: {fileID: 7428664386037767971, guid: 2418764e4eb975c4698be923f21fe7a5,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2418764e4eb975c4698be923f21fe7a5, type: 3}
@@ -1553,11 +1558,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 140291397}
     m_Modifications:
-    - target: {fileID: 7428664386037767969, guid: 2418764e4eb975c4698be923f21fe7a5,
-        type: 3}
-      propertyPath: m_Name
-      value: Jewel
-      objectReference: {fileID: 0}
     - target: {fileID: 7428664386037767970, guid: 2418764e4eb975c4698be923f21fe7a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1612,6 +1612,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7428664386037767969, guid: 2418764e4eb975c4698be923f21fe7a5,
+        type: 3}
+      propertyPath: m_Name
+      value: Jewel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7428664386037767971, guid: 2418764e4eb975c4698be923f21fe7a5,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9169328853364272095, guid: 2418764e4eb975c4698be923f21fe7a5,
         type: 3}
@@ -7592,7 +7602,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 21300000, guid: 27f50e40b75724101ba2e5e801238813, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -9138,11 +9148,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 721137459}
     m_Modifications:
-    - target: {fileID: 7428664386037767969, guid: 2418764e4eb975c4698be923f21fe7a5,
-        type: 3}
-      propertyPath: m_Name
-      value: Jewel
-      objectReference: {fileID: 0}
     - target: {fileID: 7428664386037767970, guid: 2418764e4eb975c4698be923f21fe7a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9198,10 +9203,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7428664386037767969, guid: 2418764e4eb975c4698be923f21fe7a5,
+        type: 3}
+      propertyPath: m_Name
+      value: Jewel
+      objectReference: {fileID: 0}
     - target: {fileID: 7428664386037767971, guid: 2418764e4eb975c4698be923f21fe7a5,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9169328853364272095, guid: 2418764e4eb975c4698be923f21fe7a5,
         type: 3}
@@ -9642,7 +9652,7 @@ PrefabInstance:
     - target: {fileID: 4980059480473653758, guid: d5f85b6f6e3ba4f3d985bc55da560e6f,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5f85b6f6e3ba4f3d985bc55da560e6f, type: 3}
@@ -9665,11 +9675,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1206897586}
     m_Modifications:
-    - target: {fileID: 7428664386037767969, guid: 2418764e4eb975c4698be923f21fe7a5,
-        type: 3}
-      propertyPath: m_Name
-      value: Jewel
-      objectReference: {fileID: 0}
     - target: {fileID: 7428664386037767970, guid: 2418764e4eb975c4698be923f21fe7a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9740,10 +9745,15 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.28700474
       objectReference: {fileID: 0}
+    - target: {fileID: 7428664386037767969, guid: 2418764e4eb975c4698be923f21fe7a5,
+        type: 3}
+      propertyPath: m_Name
+      value: Jewel
+      objectReference: {fileID: 0}
     - target: {fileID: 7428664386037767971, guid: 2418764e4eb975c4698be923f21fe7a5,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9169328853364272095, guid: 2418764e4eb975c4698be923f21fe7a5,
         type: 3}
@@ -9759,11 +9769,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1206897586}
     m_Modifications:
-    - target: {fileID: 7428664386037767969, guid: 2418764e4eb975c4698be923f21fe7a5,
-        type: 3}
-      propertyPath: m_Name
-      value: Jewel
-      objectReference: {fileID: 0}
     - target: {fileID: 7428664386037767970, guid: 2418764e4eb975c4698be923f21fe7a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9833,6 +9838,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.28700474
+      objectReference: {fileID: 0}
+    - target: {fileID: 7428664386037767969, guid: 2418764e4eb975c4698be923f21fe7a5,
+        type: 3}
+      propertyPath: m_Name
+      value: Jewel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7428664386037767971, guid: 2418764e4eb975c4698be923f21fe7a5,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2418764e4eb975c4698be923f21fe7a5, type: 3}
@@ -10208,6 +10223,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7539732690292433407, guid: 0f81126852c12d34ea1362588d65b944,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f81126852c12d34ea1362588d65b944, type: 3}
 --- !u!1001 &1503943083
@@ -10277,6 +10297,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7539732690292433407, guid: 0f81126852c12d34ea1362588d65b944,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f81126852c12d34ea1362588d65b944, type: 3}
 --- !u!4 &1516026091 stripped
@@ -10292,11 +10317,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 16675743}
     m_Modifications:
-    - target: {fileID: 7428664386037767969, guid: 2418764e4eb975c4698be923f21fe7a5,
-        type: 3}
-      propertyPath: m_Name
-      value: Jewel
-      objectReference: {fileID: 0}
     - target: {fileID: 7428664386037767970, guid: 2418764e4eb975c4698be923f21fe7a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10352,10 +10372,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7428664386037767969, guid: 2418764e4eb975c4698be923f21fe7a5,
+        type: 3}
+      propertyPath: m_Name
+      value: Jewel
+      objectReference: {fileID: 0}
     - target: {fileID: 7428664386037767971, guid: 2418764e4eb975c4698be923f21fe7a5,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9169328853364272095, guid: 2418764e4eb975c4698be923f21fe7a5,
         type: 3}
@@ -10944,7 +10969,7 @@ PrefabInstance:
     - target: {fileID: 3105177514177766479, guid: 69c1058e3c1d3412d8ffb394b2674352,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69c1058e3c1d3412d8ffb394b2674352, type: 3}
@@ -11021,6 +11046,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7539732690292433407, guid: 0f81126852c12d34ea1362588d65b944,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f81126852c12d34ea1362588d65b944, type: 3}
 --- !u!1001 &1785086822
@@ -11030,11 +11060,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 16675743}
     m_Modifications:
-    - target: {fileID: 7428664386037767969, guid: 2418764e4eb975c4698be923f21fe7a5,
-        type: 3}
-      propertyPath: m_Name
-      value: Jewel
-      objectReference: {fileID: 0}
     - target: {fileID: 7428664386037767970, guid: 2418764e4eb975c4698be923f21fe7a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11089,6 +11114,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7428664386037767969, guid: 2418764e4eb975c4698be923f21fe7a5,
+        type: 3}
+      propertyPath: m_Name
+      value: Jewel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7428664386037767971, guid: 2418764e4eb975c4698be923f21fe7a5,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9169328853364272095, guid: 2418764e4eb975c4698be923f21fe7a5,
         type: 3}
@@ -11728,6 +11763,87 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4077726080088472546, guid: 5216c1a17dc441d4baf295066e9cb0ed,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077726080088472546, guid: 5216c1a17dc441d4baf295066e9cb0ed,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077726078525276846, guid: 5216c1a17dc441d4baf295066e9cb0ed,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.53
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077726078525276846, guid: 5216c1a17dc441d4baf295066e9cb0ed,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077726080368827315, guid: 5216c1a17dc441d4baf295066e9cb0ed,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077726080368827315, guid: 5216c1a17dc441d4baf295066e9cb0ed,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077726080368827315, guid: 5216c1a17dc441d4baf295066e9cb0ed,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077726080368827315, guid: 5216c1a17dc441d4baf295066e9cb0ed,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077726078525276848, guid: 5216c1a17dc441d4baf295066e9cb0ed,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077726079768816485, guid: 5216c1a17dc441d4baf295066e9cb0ed,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077726080088472548, guid: 5216c1a17dc441d4baf295066e9cb0ed,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077726080368827314, guid: 5216c1a17dc441d4baf295066e9cb0ed,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3946b559f2075a54684b5dc404f7b8f4,
+        type: 3}
+    - target: {fileID: 4077726080368827314, guid: 5216c1a17dc441d4baf295066e9cb0ed,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 2.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077726080368827314, guid: 5216c1a17dc441d4baf295066e9cb0ed,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 1.59
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077726080368827314, guid: 5216c1a17dc441d4baf295066e9cb0ed,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4077726080368827314, guid: 5216c1a17dc441d4baf295066e9cb0ed,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5216c1a17dc441d4baf295066e9cb0ed, type: 3}
 --- !u!1001 &1912150175
@@ -11796,6 +11912,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7539732690292433407, guid: 0f81126852c12d34ea1362588d65b944,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f81126852c12d34ea1362588d65b944, type: 3}
@@ -11947,11 +12068,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 140291397}
     m_Modifications:
-    - target: {fileID: 7428664386037767969, guid: 2418764e4eb975c4698be923f21fe7a5,
-        type: 3}
-      propertyPath: m_Name
-      value: Jewel
-      objectReference: {fileID: 0}
     - target: {fileID: 7428664386037767970, guid: 2418764e4eb975c4698be923f21fe7a5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12007,10 +12123,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7428664386037767969, guid: 2418764e4eb975c4698be923f21fe7a5,
+        type: 3}
+      propertyPath: m_Name
+      value: Jewel
+      objectReference: {fileID: 0}
     - target: {fileID: 7428664386037767971, guid: 2418764e4eb975c4698be923f21fe7a5,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9169328853364272095, guid: 2418764e4eb975c4698be923f21fe7a5,
         type: 3}
@@ -12209,7 +12330,7 @@ PrefabInstance:
     - target: {fileID: 3105177514177766479, guid: 69c1058e3c1d3412d8ffb394b2674352,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 5
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 69c1058e3c1d3412d8ffb394b2674352, type: 3}
