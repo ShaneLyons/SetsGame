@@ -116,3 +116,15 @@ MonoBehaviour:
     pitch: 2
     loop: 1
     source: {fileID: 0}
+  - name: MouseOverButton
+    clip: {fileID: 8300000, guid: cf4a12cff6ef147c1a8431c541d0490a, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: MouseClickButton
+    clip: {fileID: 8300000, guid: 04b939ae26f0c488c90d3a9bf49519e6, type: 3}
+    volume: 0.1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}

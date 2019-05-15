@@ -251,6 +251,7 @@ GameObject:
   - component: {fileID: 2873109001377530765}
   - component: {fileID: 2873109001377530762}
   - component: {fileID: 2873109001377530763}
+  - component: {fileID: 3580626538395884658}
   m_Layer: 5
   m_Name: Main Menu Button
   m_TagString: Untagged
@@ -397,6 +398,18 @@ MonoBehaviour:
   panel: {fileID: 2873109001963267078}
   screen: {fileID: 2873109002395921605}
   active: 0
+--- !u!114 &3580626538395884658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2873109001377530761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc2f2046a9fd545689c966b5cc92f2d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2873109001828055854
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,6 +424,7 @@ GameObject:
   - component: {fileID: 2873109001828055842}
   - component: {fileID: 2873109001828055843}
   - component: {fileID: 2873109001828055840}
+  - component: {fileID: 3691117352941689721}
   m_Layer: 5
   m_Name: Levels Button
   m_TagString: Untagged
@@ -557,6 +571,18 @@ MonoBehaviour:
   panel: {fileID: 2873109001963267078}
   screen: {fileID: 2873109002395921605}
   active: 0
+--- !u!114 &3691117352941689721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2873109001828055854}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc2f2046a9fd545689c966b5cc92f2d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2873109001963267078
 GameObject:
   m_ObjectHideFlags: 0
@@ -865,6 +891,7 @@ GameObject:
   - component: {fileID: 2873109002622824603}
   - component: {fileID: 2873109002622824600}
   - component: {fileID: 2873109002622824601}
+  - component: {fileID: 7778076733715567621}
   m_Layer: 5
   m_Name: Menu Button
   m_TagString: Untagged
@@ -1000,3 +1027,15 @@ MonoBehaviour:
   panel: {fileID: 2873109001963267078}
   screen: {fileID: 2873109002395921605}
   active: 0
+--- !u!114 &7778076733715567621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2873109002622824583}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc2f2046a9fd545689c966b5cc92f2d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
